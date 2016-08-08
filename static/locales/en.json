@@ -1,0 +1,57 @@
+{
+  "website":{
+    "title": "Tsega's Spot"
+  },
+  "nav":{
+    "home": "Home",
+    "about_me": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "career": "Career",
+    "blog": "Blog",
+    "link": "Link"
+  },
+  "about_me":{
+    "about_me": "About Me",
+    "des": "I am a software engineer with expertise in building enterprise applications for desktop, web, and mobile."
+  },
+  "skills":{
+    "my_skills": "My Skills"
+  },
+  "projects":{
+    "my_projects": "My Projects",
+    "cgspacetweets": "A tool to mass-tweet CGSpace entries to twitter, also providing the status of each entry as being tweeted or not.",
+    "dagris": "An information system designed to facilitate the compilation, organization and dissemination of information on the origin, distribution, diversity, present use and status of indigenous farm animal genetic resources.",
+    "datetimepicker": "A Bootstrap 3 DateTime picker widget packaged for use with Meteor.js",
+    "surveylizer": "A survey data collection and analysis tool, made with Meteor!",
+    "ride": "A Bootstrap 3 DateTime picker widget packaged for use with Meteor.js",
+    "surveylizer": "A survey data collection and analysis tool, made with Meteor!",
+  },
+  "career":{
+    "my_career": "My Career",
+    "ilri": "International Livestock Research Institute",
+    "ilri_des": "Engaged in integrating different web platforms used in the institute and generating data visualization.",
+    "ilri_date": "December 2015",
+    "ilri_job": "Web Systems Specialist",
+    "cybersoft": "Cybersoft",
+    "cybersoft_des": "Built enterprise web applications, mainly focusing on automating back office services.",
+    "cybersoft_date": "May 2008",
+    "cybersoft_job": "Software Engineer / Technical Manager ",
+    "abbatravel": "ABBA Travel",
+    "abbatravel_des": "A one man IT department; developed the company’s website, setup and managed the agencies Local Area Network.",
+    "abbatravel_date": "May 2006",
+    "abbatravel_job": "IT Specialist",
+    "college": "Graduation",
+    "college_des": "At July 2013,I graduated from college and started my IT technology tour.",
+    "college_date": "Jul. 2013",
+    "college_job": "Student"
+  },
+  "blog":{
+    "my_blog": "My Blog"
+  },
+  "link":{
+    "link": "Link",
+    "view": "views"
+  }
+
+}

@@ -1,16 +1,610 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chomre=1">
-    <title>Projects by Tsega</title>
+---
+layout: blog
+title: index
+permalink: /
+---
+<div class="navbar-wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top" id="i18_title"><span
+                        data-i18n="website.title">{{ site.title }}</span></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right" id="i18_navbar">
+                    <li><a class="page-scroll" href="#page-top"><span
+                            data-i18n="nav.home">{{ site.landing.home }}</span></a></li>
+                    <li><a class="page-scroll" href="#about_me"><span
+                            data-i18n="nav.about_me">{{ site.landing.about }}</span></a></li>
+                    <li><a class="page-scroll" href="#career"><span
+                            data-i18n="nav.career">{{ site.landing.career }}</span></a></li>
+                    <li><a class="page-scroll" href="#skills"><span
+                            data-i18n="nav.skills">{{ site.landing.skills }}</span></a></li>
+                    <li><a class="page-scroll" href="#project"><span data-i18n="nav.projects">{{ site.landing.projects }}</span></a>
+                    </li>
+                    <li><a class="page-scroll" href="#blog"><span
+                            data-i18n="nav.blog">{{ site.landing.blog }}</span></a></li>
+                    <li><a class="page-scroll" href="#link"><span
+                            data-i18n="nav.link">{{ site.landing.link }}</span></a></li>
+                    <!--<li>-->
+                    <!--<a class="btn btn-sm set_en"><img src="{{"static/img/flags/United-States.png"| prepend: site.baseurl }}" height="16px" width="16px"></a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a class="btn btn-sm set_am"><img src="{{"static/img/flags/Ethiopia.png"| prepend: site.baseurl }}" height="16px" width="16px"></a>-->
+                    <!--</li>-->
 
-    <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="js/material.min.js"></script>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
 
-  </head>
-  <body>
-    <h1>Coming Soon</h1>
-  </body>
-</html>
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<section id="about_me" class="features">
+    <div class="container" id="i18_about_me">
+        <div class="row m-b-lg">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1><span data-i18n="about_me.about_me">About Me</span></h1>
+                <!-- <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p> -->
+            </div>
+        </div>
+        <div class="row">
+            <!-- python -->
+            <div class="col-xs-2 wow fadeInLeft">
+                <div class="team-member">
+                    <div class="vote-icon">
+                        <i class="icon-nodejs"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- linux -->
+            <div class="col-xs-2 wow fadeInLeft">
+                <div class="team-member">
+                    <div class="vote-icon">
+                        <i class="icon-shell"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- avatar -->
+            <div class="col-xs-4">
+                <div class="team-member wow zoomIn">
+                    <img src="{{ site.author.head_img | prepend: site.baseurl }}" height="110" width="110"
+                         class="img-responsive img-circle" alt="">
+                    <h4><span class="navy">{{ site.author.last_name }}</span> {{ site.author.first_name }}</h4>
+                    <ul class="list-inline social-icon">
+                        <li><a href="https://github.com/{{ site.author.github_username }}" target="blank"><i
+                                class="fa fa-github"></i></a>
+                        </li>
+                        <li><a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope-o"></i></a>
+                        </li>
+                        <li><a href="https://www.twitter.com/{{ site.author.twitter_username }}" target="blank"><i
+                                class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="{{ site.url}}/feed.xml" target="blank"><i class="fa fa-rss"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- html -->
+            <div class="col-xs-2 wow fadeInRight">
+                <div class="team-member">
+                    <div class="vote-icon">
+                        <i class="icon-ruby"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- docker -->
+            <div class="col-xs-2 wow fadeInRight">
+                <div class="team-member">
+                    <div class="vote-icon">
+                        <i class="icon-php-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+                <p><span data-i18n="about_me.des">
+                  I am a Software Engineer with expertise in building enterprise applications for desktop, web, and mobile platforms. Currently in <i
+                        class="fa fa-heart"></i> with Meteor.js!
+                </span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="career" class="timeline features gray-section">
+    <div class="container" id="i18_career">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1><span data-i18n="career.my_career">My Career</span></h1>
+            </div>
+        </div>
+        <div class="row features-block">
+
+            <div class="col-lg-12">
+                <div id="vertical-timeline" class="vertical-container light-timeline center-orientation">
+                    <!-- nextcode -->
+                    <div class="vertical-timeline-block">
+                        <div class="vertical-timeline-icon navy-bg">
+                            <i class="fa fa-plus-square"></i>
+                        </div>
+                        <div class="vertical-timeline-content">
+                            <h2><span data-i18n="career.ilri">International Livestock Research Institute</span></h2>
+                            <p><span data-i18n="career.ilri_des">Currently working on integration of the different web platforms of the institute and data visualization.</span>
+                            </p>
+                            <span class="vertical-date"><span data-i18n="career.nextcode_date"> Dec. 2015 </span><br/> <small><span
+                                    data-i18n="career.ilri_job">Web Systems Specialist</span></small> </span>
+                        </div>
+                    </div>
+                    <!-- netease game -->
+                    <div class="vertical-timeline-block">
+                        <div class="vertical-timeline-icon navy-bg">
+                            <i class="fa fa-gamepad"></i>
+                        </div>
+                        <div class="vertical-timeline-content">
+                            <h2><span data-i18n="career.cybersoft">Cybersoft</span></h2>
+                            <p><span data-i18n="career.cybersoft_des">Built enterprise web applications, mainly focusing on automating back office services.</span>
+                            </p>
+                            <span class="vertical-date"><span data-i18n="career.cybersoft_date"> May 2008 </span><br/> <small><span
+                                    data-i18n="career.cybersoft_job">Software Engineer / Technical Manager</span></small> </span>
+                        </div>
+                    </div>
+                    <!-- uloud -->
+                    <div class="vertical-timeline-block">
+                        <div class="vertical-timeline-icon navy-bg">
+                            <i class="fa fa-cloud"></i>
+                        </div>
+                        <div class="vertical-timeline-content">
+                            <h2><span data-i18n="career.abbatravel">ABBA Travel</span></h2>
+                            <p><span data-i18n="career.abbatravel_des">A one man IT department; developed the company’s website, setup and managed the agencies Local Area Network.</span>
+                            </p>
+                            <span class="vertical-date"><span data-i18n="career.abbatravel_date"> May 2006 </span><br/> <small><span
+                                    data-i18n="career.abbatravel_job">IT Specialist</span></small> </span>
+                        </div>
+                    </div>
+                    <!-- student -->
+                    <!--<div class="vertical-timeline-block">-->
+                    <!--<div class="vertical-timeline-icon navy-bg">-->
+                    <!--<i class="fa fa-book"></i>-->
+                    <!--</div>-->
+                    <!--<div class="vertical-timeline-content">-->
+                    <!--<h2><span data-i18n="career.college">Graduation</span></h2>-->
+                    <!--<p><span data-i18n="career.college_des">At July 2013,I graduated from college and started my IT technology tour.</span></p>-->
+                    <!--<span class="vertical-date"><span data-i18n="career.college_date"> Jul. 2013 </span><br/> <small><span data-i18n="career.college_job">Student</span></small> </span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="team features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center" id="i18_skills">
+                <div class="navy-line"></div>
+                <h1><span data-i18n="skills.my_skills">My Skills</span></h1>
+            </div>
+        </div>
+        <div class="row features-block">
+            <div class="row">
+                <div class="col-lg-1 col-lg-offset-2 features-text wow fadeInLeft">
+                    <p>JavaScript</p>
+                </div>
+                <div class="col-lg-7 features-text wow fadeInLeft">
+                    <div class="progress progress-bar-default">
+                        <div style="width: 85%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85"
+                             role="progressbar" class="progress-bar">
+                            <!-- <span class="sr-only">85% Complete (success)</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-1 col-lg-offset-2 wow fadeInLeft">
+                    <p>HTML/CSS</p>
+                </div>
+                <div class="col-lg-7 wow fadeInLeft">
+                    <div class="progress progress-bar-default">
+                        <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90"
+                             role="progressbar" class="progress-bar">
+                            <!-- <span class="sr-only">90% Complete (success)</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-1 col-lg-offset-2 wow fadeInLeft">
+                    <p>Meteor.js</p>
+                </div>
+                <div class="col-lg-7 wow fadeInLeft">
+                    <div class="progress progress-bar-default">
+                        <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80"
+                             role="progressbar" class="progress-bar">
+                            <!-- <span class="sr-only">80% Complete (success)</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-1 col-lg-offset-2 wow fadeInLeft">
+                    <p>Drupal</p>
+                </div>
+                <div class="col-lg-7 wow fadeInLeft">
+                    <div class="progress progress-bar-default">
+                        <div style="width: 75%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75"
+                             role="progressbar" class="progress-bar">
+                            <!-- <span class="sr-only">60% Complete (success)</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-1 col-lg-offset-2 wow fadeInLeft">
+                    <p>Linux/Shell</p>
+                </div>
+                <div class="col-lg-7 wow fadeInLeft">
+                    <div class="progress progress-bar-default">
+                        <div style="width: 70%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70"
+                             role="progressbar" class="progress-bar">
+                            <!-- <span class="sr-only">70% Complete (success)</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-1 col-lg-offset-2 wow fadeInLeft">
+                    <p>SQL</p>
+                </div>
+                <div class="col-lg-7 wow fadeInLeft">
+                    <div class="progress progress-bar-default">
+                        <div style="width: 75%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75"
+                             role="progressbar" class="progress-bar">
+                            <!-- <span class="sr-only">70% Complete (success)</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="project" class="project gray-section features">
+    <div class="container" id="i18_projects">
+        <div class="row m-b-lg">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1><span data-i18n="projects.my_projects">My Projects</span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 wow fadeInLeft">
+                <div class="team-member">
+                    <img src="{{ site.project.cgspacetweets.img | prepend: site.baseurl }}"
+                         class="img-responsive img-small" alt="">
+                    <h4><a href="{{ site.project.cgspacetweets.url | prepend: 'https://github.com' }}" target="blank"
+                           style="color: #1ab394" class="navy">{{ site.project.cgspacetweets.name }}</a></h4>
+                    <p><span data-i18n="projects.cgspacetweets">A tool to mass-tweet CGSpace entries to twitter, also providing the status of each entry as being tweeted or not.</span>
+                    </p>
+                    <ul class="list-inline">
+                        <li>
+                            <a class="github-button"
+                               href="{{ site.project.cgspacetweets.url | prepend: 'https://github.com'}}"
+                               data-icon="octicon-star"
+                               data-count-href="{{ site.project.cgspacetweets.url | append: '/stargazers' }}"
+                               data-count-api="{{ site.project.cgspacetweets.url | prepend: '/repos' | append: '#stargazers_count' }}"
+                               data-count-aria-label="# stargazers on GitHub"
+                               aria-label="Star hydepress/jekyll-install on GitHub">Star</a>
+                        </li>
+                        <li>
+                            <a class="github-button"
+                               href="{{ site.project.cgspacetweets.url | prepend: 'https://github.com'}}"
+                               data-icon="octicon-fork"
+                               data-count-href="{{ site.project.cgspacetweets.url | append: '/forks' }}"
+                               data-count-api="{{ site.project.cgspacetweets.url | prepend: '/repos' | append: '#forks_count' }}"
+                               data-count-aria-label="# forks on GitHub"
+                               aria-label="Star hydepress/jekyll-install on GitHub">Fork</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6 wow fadeInRight">
+                <div class="team-member">
+                    <img src="{{ site.project.dagris.img | prepend: site.baseurl }}"
+                         class="img-responsive img-small" alt="">
+                    <h4><a href="{{ site.project.dagris.url | prepend: 'https://github.com' }}" target="blank"
+                           style="color: #1ab394" class="navy">{{ site.project.dagris.name }}</a></h4>
+                    <p><span data-i18n="projects.dagris">An information system designed to facilitate the compilation, organization and dissemination of information on the origin, distribution, diversity, present use and status of indigenous farm animal genetic resources.</span>
+                    </p>
+                    <ul class="list-inline">
+                        <li>
+                            <a class="github-button" href="{{ site.project.dagris.url | prepend: 'https://github.com'}}"
+                               data-icon="octicon-star"
+                               data-count-href="{{ site.project.dagris.url | append: '/stargazers' }}"
+                               data-count-api="{{ site.project.dagris.url | prepend: '/repos' | append: '#stargazers_count' }}"
+                               data-count-aria-label="# stargazers on GitHub"
+                               aria-label="Star hydepress/jekyll-install on GitHub">Star</a>
+                        </li>
+                        <li>
+                            <a class="github-button" href="{{ site.project.dagris.url | prepend: 'https://github.com'}}"
+                               data-icon="octicon-fork"
+                               data-count-href="{{ site.project.dagris.url | append: '/forks' }}"
+                               data-count-api="{{ site.project.dagris.url | prepend: '/repos' | append: '#forks_count' }}"
+                               data-count-aria-label="# forks on GitHub"
+                               aria-label="Star hydepress/jekyll-install on GitHub">Fork</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 wow fadeInLeft">
+                <div class="team-member">
+                    <img src="{{ site.project.datetimepicker.img | prepend: site.baseurl }}"
+                         class="img-responsive img-small" alt="">
+                    <h4><a href="{{ site.project.datetimepicker.url | prepend: 'https://github.com' }}" target="blank"
+                           style="color: #1ab394" class="navy">{{ site.project.datetimepicker.name }}</a></h4>
+                    <p><span data-i18n="projects.datetimepicker">A Bootstrap 3 DateTime picker widget packaged for use with Meteor.js</span>
+                    </p>
+                    <ul class="list-inline">
+                        <li>
+                            <a class="github-button"
+                               href="{{ site.project.datetimepicker.url | prepend: 'https://github.com'}}"
+                               data-icon="octicon-star"
+                               data-count-href="{{ site.project.datetimepicker.url | append: '/stargazers' }}"
+                               data-count-api="{{ site.project.datetimepicker.url | prepend: '/repos' | append: '#stargazers_count' }}"
+                               data-count-aria-label="# stargazers on GitHub"
+                               aria-label="Star hydepress/jekyll-install on GitHub">Star</a>
+                        </li>
+                        <li>
+                            <a class="github-button"
+                               href="{{ site.project.datetimepicker.url | prepend: 'https://github.com'}}"
+                               data-icon="octicon-fork"
+                               data-count-href="{{ site.project.datetimepicker.url | append: '/forks' }}"
+                               data-count-api="{{ site.project.datetimepicker.url | prepend: '/repos' | append: '#forks_count' }}"
+                               data-count-aria-label="# forks on GitHub"
+                               aria-label="Star hydepress/jekyll-install on GitHub">Fork</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6 wow fadeInRight">
+                <div class="team-member">
+                    <img src="{{ site.project.surveylizer.img | prepend: site.baseurl }}"
+                         class="img-responsive img-small" alt="">
+                    <h4><a href="{{ site.project.surveylizer.url | prepend: 'https://github.com' }}" target="blank"
+                           style="color: #1ab394" class="navy">{{ site.project.surveylizer.name }}</a></h4>
+                    <p><span data-i18n="projects.rsser">A survey data collection and analysis tool, made with Meteor!</span>
+                    </p>
+                    <ul class="list-inline">
+                        <li>
+                            <a class="github-button" href="{{ site.project.surveylizer.url | prepend: 'https://github.com'}}"
+                               data-icon="octicon-star"
+                               data-count-href="{{ site.project.surveylizer.url | append: '/stargazers' }}"
+                               data-count-api="{{ site.project.surveylizer.url | prepend: '/repos' | append: '#stargazers_count' }}"
+                               data-count-aria-label="# stargazers on GitHub"
+                               aria-label="Star hydepress/jekyll-install on GitHub">Star</a>
+                        </li>
+                        <li>
+                            <a class="github-button" href="{{ site.project.surveylizer.url | prepend: 'https://github.com'}}"
+                               data-icon="octicon-fork"
+                               data-count-href="{{ site.project.surveylizer.url | append: '/forks' }}"
+                               data-count-api="{{ site.project.surveylizer.url | prepend: '/repos' | append: '#forks_count' }}"
+                               data-count-aria-label="# forks on GitHub"
+                               aria-label="Star hydepress/jekyll-install on GitHub">Fork</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
+
+<section id="blog" class="navy-section testimonials" style="margin-top: 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center wow zoomIn" id="i18_blog">
+                <br><br><br>
+                <a class="btn btn-lg btn-default btn-rounded btn-outline" href="/blog/"><span data-i18n="blog.my_blog">My Blog</span></a>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="link" class="contact features">
+    <div class="container" id="i18_link">
+        <div class="row m-b-lg">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1><span data-i18n="link.link">Link</span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="team-member wow zoomIn">
+                    <h4><span class="navy">{{ site.social.last_name }}</span> {{ site.social.first_name }}</h4>
+                    <p>
+                        {{ site.social.description }}
+                    </p>
+                    <ul class="list-inline social-icon">
+                        <li><a href="{{ site.social.linkedin }}" target="blank"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li><a href="mailto:{{ site.social.email }}"><i class="fa fa-envelope-o"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+                <p id="dagris_site_pv"><strong>&copy; 2016 {{ site.title }}</strong></p>
+                <!-- <img src="http://www.reliablecounter.com/count.php?page=www.jack003.com3&digit=style/black-and-white/3/&reloads=0" alt="" title="" border="0">&nbsp;<span data-i18n="link.view">views</span> || -->
+                <!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+                <!-- <span id="busuanzi_container_site_pv"><strong id="busuanzi_value_site_pv"></strong>&nbsp;views.&nbsp;</span>|| -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(document).ready(function () {
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 80
+        });
+        // Page scrolling feature
+        $('a.page-scroll').bind('click', function (event) {
+            var link = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(link.attr('href')).offset().top - 50
+            }, 500);
+            event.preventDefault();
+            $("#navbar").collapse('hide');
+        });
+    });
+    var cbpAnimatedHeader = (function () {
+        var docElem = document.documentElement,
+                header = document.querySelector('.navbar-default'),
+                didScroll = false,
+                changeHeaderOn = 200;
+
+        function init() {
+            window.addEventListener('scroll', function (event) {
+                if (!didScroll) {
+                    didScroll = true;
+                    setTimeout(scrollPage, 250);
+                }
+            }, false);
+        }
+
+        function scrollPage() {
+            var sy = scrollY();
+            if (sy >= changeHeaderOn) {
+                $(header).addClass('navbar-scroll')
+            }
+            else {
+                $(header).removeClass('navbar-scroll')
+            }
+            didScroll = false;
+        }
+
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+
+        init();
+
+    })();
+    // Activate WOW.js plugin for animation on scrol
+    new WOW().init();
+</script>
+
+<script>
+    $(document).ready(function () {
+        $.i18n.init({
+            resGetPath: 'static/locales/__lng__.json',
+            load: 'unspecific',
+            fallbackLng: false,
+            lng: 'en'
+        }, function (t) {
+            $('.i18container').i18n();
+            // $('#i18_title').i18n();
+            $('#i18_navbar').i18n();
+            $('#i18_about_me').i18n();
+            $('#i18_skills').i18n();
+            $('#i18_projects').i18n();
+            $('#i18_career').i18n();
+            $('#i18_blog').i18n();
+            $('#i18_link').i18n();
+        });
+        $('.set_en').on('click', function () {
+            i18n.setLng('en', function () {
+                $('.i18container').i18n();
+                // $('#i18_title').i18n();
+                $('#i18_navbar').i18n();
+                $('#i18_about_me').i18n();
+                $('#i18_skills').i18n();
+                $('#i18_projects').i18n();
+                $('#i18_career').i18n();
+                $('#i18_blog').i18n();
+                $('#i18_link').i18n();
+                // $('.set_en').addClass('active');
+                // $('.set_cn').removeClass('active');
+            });
+        });
+        $('.set_am').on('click', function () {
+            i18n.setLng('am', function () {
+                $('.i18container').i18n();
+                // $('#i18_title').i18n();
+                $('#i18_navbar').i18n();
+                $('#i18_about_me').i18n();
+                $('#i18_skills').i18n();
+                $('#i18_projects').i18n();
+                $('#i18_career').i18n();
+                $('#i18_blog').i18n();
+                $('#i18_link').i18n();
+                // $('.set_cn').addClass('active');
+                // $('.set_en').removeClass('active');
+            });
+        });
+    });
+</script>

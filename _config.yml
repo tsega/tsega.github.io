@@ -1,0 +1,105 @@
+# Welcome to Jekyll!
+
+# Website settings
+title: "tsega.github.io"
+description: "All things tech from me!"
+keywords: "tsega,tech,blog,projects,documentation,tutorials,github,gh-pages"
+
+baseurl: "/"
+url: "http://tsega.github.io"
+# url: "http://127.0.0.1:4000"
+
+# blog img path
+img_path: 'http://www.jack003.com/static/img/blog'
+
+# author
+author:
+  name: 'tsega'
+  first_name: 'Tsegaselassie'
+  last_name: 'Tadesse'
+  email: 'tsegaselassi@gmail.com'
+  twitter_username: 'tsegat'
+  github_username: 'tsega'
+  head_img: 'static/img/landing/me.jpg'
+
+# social link
+social:
+  first_name: 'Tsegaselassie'
+  last_name: 'Tadesse'
+  description: 'Software Engineer'
+  linkedin: 'https://www.linkedin.com/in/tsegaselassie'
+  email: 'tsegaselassi@gmail.com'
+
+# landing page
+landing:
+  home: 'Home'
+  about: 'About'
+  career: 'Career'
+  skills: 'Skills'
+  projects: 'Project'
+  blog: 'Blog'
+  link: 'Link'
+
+# my projects
+project:
+  cgspacetweets:
+    name: 'CGSpace Tweets'
+    url: '/ilri/ckm-cgspace-mass-tweeter'
+    img: 'static/img/landing/meteor.png'
+  dagris:
+    name: 'Domestic Animal Genetic Resources Information System (DAGRIS)'
+    url: '/ilri/ckm-dagris'
+    img: 'static/img/landing/drupal.png'
+  datetimepicker:
+    name: 'Meteor Date-Time Picker'
+    url: '/tsega/meteor-bootstrap3-datetimepicker'
+    img: 'static/img/landing/meteor.png'
+  surveylizer:
+    name: 'Survelizer'
+    url: '/tsega/surveylizer'
+    img: 'static/img/landing/meteor.png'
+
+# blog index
+index:
+  home: 'Home'
+  javascript: 'JavaScript'
+  linux: 'Linux'
+  html: 'HTML'
+  database: 'Database'
+  mac: 'Mac'
+  life: 'Life'
+
+# donate
+donate:
+  wechat: 'static/img/pay/wechat.png'
+  alipay: 'static/img/pay/alipay.png'
+
+# comment
+changyan:
+  # appid: cysfY7ULn
+  # conf: prod_861928934cecb7a18e15bedaed9dae29
+disqus:
+  name: jalpc
+  public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
+
+# share
+bshare:
+  uuid: 513f778e-a8f7-4c20-9ec2-d29cc2328d75
+
+# baidu analytics
+ba:
+  uuid: 317acca9ef9255b934e46371e471431d
+
+# google analytics
+ga:
+  id: UA-73784599-1
+
+# Build settings
+encoding: "utf-8"
+
+# other settings
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
