@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tsegaselassie Tadesse — Senior Software Architect</title>
+<meta name="description" content="Tsegaselassie 'Tsega' Tadesse — Senior Software Architect. 20+ years designing systems, from CTO leadership to cloud-native architecture for global brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#1b1109;
+    --roast:#2a1b10;
+    --roast-2:#3a2716;
+    --gold:#e0982b;
+    --gold-bright:#f0ac45;
+    --forest:#1f3b2c;
+    --forest-bright:#3d7a5a;
+    --cream:#f6efe2;
+    --text:#f3ebdd;
+    --text-muted:#b6a58e;
+    --border:#3a2c1c;
+    --display:'Fraunces', serif;
+    --body:'Karla', sans-serif;
+    --mono:'JetBrains Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--espresso);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{ color:inherit; text-decoration:none; }
+  ::selection{ background:var(--gold); color:var(--espresso); }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
+
+  .blueprint{
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size:36px 36px;
+    background-position:-1px -1px;
+  }
+
+  /* ---------- signature divider (branch & merge) ---------- */
+  .divider{ height:56px; position:relative; overflow:hidden; }
+  .divider svg{ width:100%; height:100%; display:block; }
+
+
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(27,17,9,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:72px; }
+  .logo{
+    font-family:var(--display);
+    font-style:italic;
+    font-weight:500;
+    font-size:19px;
+    color:var(--text);
+    display:flex; align-items:center; gap:6px;
+  }
+  .logo span{ font-family:var(--mono); font-style:normal; font-size:13px; color:var(--text-muted); }
+  .nav-links{ display:flex; gap:32px; font-family:var(--mono); font-size:13px; color:var(--text-muted); }
+  .nav-links a{ transition:color 0.2s; }
+  .nav-links a:hover, .nav-links a:focus-visible{ color:var(--gold); }
+  .nav-links a::before{ content:'· '; color:var(--gold); }
+  @media (max-width:760px){ .nav-links{ display:none; } }
+
+  /* ---------- hero ---------- */
+  .hero{ position:relative; padding:112px 0 88px; border-bottom:1px solid var(--border); overflow:hidden; }
+  .hero-bg{ position:absolute; inset:0; z-index:0; opacity:0.4; pointer-events:none; }
+  .hero-bg svg{ width:100%; height:100%; }
+  .eyebrow{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--gold); display:flex; align-items:center; gap:12px; margin-bottom:26px;
+    position:relative; z-index:1;
+  }
+  .eyebrow::before{ content:''; width:26px; height:1px; background:var(--gold); }
+  h1.hero-name{
+    font-family:'Pinyon Script', cursive; font-weight:400; font-size:clamp(52px,8.2vw,96px);
+    line-height:1.15; max-width:880px; position:relative; z-index:1; color:var(--cream);
+  }
+  .hero-tagline{
+    margin-top:22px; font-family:var(--display); font-style:italic; font-weight:500;
+    font-size:clamp(19px,2.4vw,25px); color:var(--cream); max-width:640px;
+    border-left:2px solid var(--gold); padding-left:18px; position:relative; z-index:1;
+  }
+  .hero-sub{ margin-top:24px; max-width:560px; color:var(--text-muted); font-size:16px; position:relative; z-index:1; }
+
+  .terminal{
+    margin-top:48px; max-width:640px; background:var(--roast); border:1px solid var(--border);
+    border-radius:10px; overflow:hidden; position:relative; z-index:1;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,0.7);
+  }
+  .terminal-bar{ display:flex; align-items:center; gap:8px; padding:12px 16px; background:var(--roast-2); border-bottom:1px solid var(--border); }
+  .terminal-bar span{ width:10px; height:10px; border-radius:50%; background:#4a3520; }
+  .terminal-bar .lbl{ margin-left:8px; font-family:var(--mono); font-size:12px; color:var(--text-muted); }
+  .terminal-body{ padding:22px 24px 26px; font-family:var(--mono); font-size:14px; line-height:1.85; min-height:150px; }
+  .terminal-body .prompt{ color:var(--gold); }
+  .terminal-body .out{ color:var(--text-muted); }
+  .cursor{ display:inline-block; width:8px; height:16px; background:var(--gold); vertical-align:middle; animation:blink 1s step-end infinite; }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .hero-ctas{ margin-top:36px; display:flex; gap:16px; flex-wrap:wrap; position:relative; z-index:1; }
+  .btn{ font-family:var(--mono); font-size:13px; padding:14px 24px; border-radius:6px; display:inline-flex; align-items:center; gap:8px; transition:transform 0.15s, background 0.15s, border-color 0.15s; }
+  .btn-primary{ background:var(--gold); color:var(--espresso); font-weight:700; }
+  .btn-primary:hover{ transform:translateY(-2px); background:var(--gold-bright); }
+  .btn-ghost{ border:1px solid var(--border); color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--gold); transform:translateY(-2px); }
+
+  /* ---------- photo banner (duotone treatment) ---------- */
+  .photo-banner{ display:flex; height:340px; }
+  .photo-half{ position:relative; flex:1; overflow:hidden; }
+  .photo-half img{
+    width:100%; height:100%; object-fit:cover;
+    filter:grayscale(55%) sepia(20%) contrast(1.1) brightness(0.6);
+  }
+  .photo-half::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(155deg, rgba(27,17,9,0.75), rgba(224,152,43,0.28));
+    mix-blend-mode:multiply;
+  }
+  .photo-half::before{
+    content:''; position:absolute; inset:0;
+    background:rgba(27,17,9,0.15);
+    z-index:1;
+  }
+  .photo-caption{
+    position:absolute; left:20px; right:20px; bottom:16px; z-index:2;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:var(--mono); font-size:11px; color:var(--cream);
+  }
+  .photo-caption span:last-child{ color:var(--text-muted); }
+  @media (max-width:720px){
+    .photo-banner{ flex-direction:column; height:auto; }
+    .photo-half{ height:220px; }
+  }
+
+  /* ---------- stats ---------- */
+  .stats{ border-bottom:1px solid var(--border); background:var(--roast); }
+  .stats-grid{ display:grid; grid-template-columns:repeat(5,1fr); }
+  .stat{ padding:34px 20px; text-align:center; border-left:1px solid var(--border); }
+  .stat:first-child{ border-left:none; }
+  .stat-num{ font-family:var(--display); font-weight:600; font-size:30px; color:var(--gold); }
+  .stat-lbl{ margin-top:6px; font-family:var(--mono); font-size:11px; letter-spacing:0.05em; text-transform:uppercase; color:var(--text-muted); }
+  @media (max-width:860px){
+    .stats-grid{ grid-template-columns:repeat(2,1fr); }
+    .stat:nth-child(3){ border-left:none; }
+    .stat{ border-bottom:1px solid var(--border); }
+  }
+
+  /* ---------- blog CTA ---------- */
+  .blog-cta{ padding:80px 0; background:#142a1e; border-bottom:1px solid #2d4a37; }
+  .blog-cta-inner{
+    border:1px solid #2d4a37; border-left:3px solid var(--gold);
+    border-radius:10px; padding:44px 48px; background:#1a3226;
+    display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;
+  }
+  .blog-cta-tag{ font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+  .blog-cta-title{ font-family:var(--display); font-weight:500; font-size:clamp(24px,3.2vw,32px); max-width:520px; color:#f0f5ee; }
+  .blog-cta-sub{ margin-top:12px; color:#8aa696; font-size:15px; max-width:480px; }
+  .blog-cta-inner .btn{ white-space:nowrap; }
+  @media (max-width:720px){ .blog-cta-inner{ padding:32px; } }
+  section{ padding:96px 0; border-bottom:1px solid var(--border); }
+  section:last-of-type{ border-bottom:none; }
+  .section-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:52px; gap:24px; flex-wrap:wrap; }
+  .section-eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:0.09em; text-transform:uppercase; color:var(--gold); }
+  h2.section-title{ font-family:var(--display); font-weight:500; font-size:clamp(27px,3.8vw,40px); margin-top:10px; }
+  .section-note{ max-width:340px; color:var(--text-muted); font-size:14px; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- about ---------- */
+  .about-grid{ display:grid; grid-template-columns:0.9fr 1.4fr; gap:60px; align-items:start; }
+  .avatar-block{
+    aspect-ratio:1; border-radius:12px; background:linear-gradient(155deg, var(--roast-2), var(--roast));
+    border:1px solid var(--border); display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+  }
+  .avatar-photo{ width:100%; height:100%; object-fit:cover; filter:contrast(1.05) saturate(0.92) brightness(0.97); position:relative; z-index:0; }
+  .avatar-block::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(27,17,9,0.9) 0%, rgba(27,17,9,0.15) 38%, transparent 60%);
+    z-index:1; pointer-events:none;
+  }
+  .avatar-tag{ position:absolute; bottom:18px; left:18px; right:18px; font-family:var(--mono); font-size:11px; color:var(--text-muted); display:flex; justify-content:space-between; z-index:2; }
+  .about-copy p{ color:var(--text-muted); font-size:16px; margin-bottom:19px; }
+  .about-copy strong{ color:var(--text); font-weight:700; }
+  .lang-row{ display:flex; gap:12px; margin-top:26px; flex-wrap:wrap; }
+  .chip{ font-family:var(--mono); font-size:12px; padding:8px 14px; border:1px solid var(--border); border-radius:100px; color:var(--text-muted); }
+
+  /* ---------- timeline ---------- */
+  .timeline{ position:relative; }
+  .timeline::before{ content:''; position:absolute; left:120px; top:6px; bottom:6px; width:1px; background:var(--border); }
+  .t-row{ display:grid; grid-template-columns:120px 1fr; gap:0 40px; padding:28px 0; position:relative; }
+  .t-row:not(:last-child){ border-bottom:1px solid var(--border); }
+  .t-date{ font-family:var(--mono); font-size:13px; color:var(--gold); padding-top:4px; }
+  .t-dot{ position:absolute; left:116px; top:32px; width:9px; height:9px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 4px var(--espresso); }
+  .t-role{ font-family:var(--display); font-weight:500; font-size:20px; }
+  .t-org{ font-family:var(--mono); font-size:13px; color:var(--gold-bright); margin-top:4px; }
+  .t-desc{ color:var(--text-muted); font-size:15px; margin-top:10px; max-width:580px; }
+  @media (max-width:640px){
+    .timeline::before{ display:none; }
+    .t-row{ grid-template-columns:1fr; gap:6px; }
+    .t-dot{ display:none; }
+  }
+
+  /* ---------- projects ---------- */
+  .proj-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+  .proj-card{ background:var(--espresso); padding:32px; transition:background 0.2s; }
+  .proj-card:hover{ background:var(--roast); }
+  .proj-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; }
+  .proj-name{ font-family:var(--display); font-weight:500; font-size:19px; }
+  .proj-metric{ font-family:var(--mono); font-size:12px; color:var(--gold); white-space:nowrap; padding-left:16px; }
+  .proj-desc{ color:var(--text-muted); font-size:14px; margin-bottom:18px; }
+  .proj-tags{ display:flex; gap:8px; flex-wrap:wrap; }
+  .tag{ font-family:var(--mono); font-size:11px; color:var(--text-muted); border:1px solid var(--border); padding:4px 10px; border-radius:100px; }
+  @media (max-width:720px){ .proj-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- community ---------- */
+  .community-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+  .c-card{ background:var(--espresso); padding:30px; }
+  .c-icon{ width:36px; height:36px; border-radius:8px; background:var(--roast-2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--forest-bright); font-family:var(--mono); font-size:13px; margin-bottom:18px; }
+  .c-title{ font-family:var(--display); font-size:18px; font-weight:500; margin-bottom:10px; }
+  .c-desc{ color:var(--text-muted); font-size:14px; }
+  @media (max-width:860px){ .community-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- skills ---------- */
+  .skills-wrap{ display:flex; flex-wrap:wrap; gap:12px; }
+  .skill-chip{ font-family:var(--mono); font-size:13px; padding:10px 18px; border:1px solid var(--border); border-radius:8px; color:var(--text); background:var(--roast); transition:border-color 0.2s, color 0.2s; }
+  .skill-chip:hover{ border-color:var(--gold); color:var(--gold); }
+  .skill-chip.lead{ border-color:var(--gold); color:var(--gold); background:rgba(224,152,43,0.08); font-weight:700; }
+  .skill-chip.muted{ color:var(--text-muted); }
+  .skill-chip.muted:hover{ border-color:var(--forest-bright); color:var(--forest-bright); }
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:88px 0 0; position:relative; overflow:hidden;
+    background:#142a1e; border-top:1px solid #2d4a37;
+  }
+  .contact-head{ font-family:var(--display); font-weight:500; font-size:clamp(28px,4.6vw,48px); max-width:680px; line-height:1.15; color:#f0f5ee; }
+  .contact-head em{ font-style:italic; color:var(--gold); }
+  .contact-links{ margin-top:44px; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#2d4a37; border:1px solid #2d4a37; }
+  .clink{
+    background:#1a3226; padding:24px; display:flex; align-items:center; gap:16px;
+    font-family:var(--mono); transition:background 0.2s, transform 0.15s;
+  }
+  .clink:hover{ background:#20402f; transform:translateY(-2px); }
+  .clink-icon{
+    width:44px; height:44px; flex-shrink:0; border-radius:9px;
+    background:rgba(224,152,43,0.1); border:1px solid #3d7a5a;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; font-weight:700; color:var(--gold); letter-spacing:0.02em;
+  }
+  .clink-body{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+  .clink-title{ font-size:15px; font-weight:700; color:#f0f5ee; }
+  .clink-sub{ font-size:11px; color:#8aa696; }
+  .clink .arrow{ margin-left:auto; color:var(--gold); transition:transform 0.2s; flex-shrink:0; }
+  .clink:hover .arrow{ transform:translateX(4px); }
+  @media (max-width:720px){ .contact-links{ grid-template-columns:1fr; } }
+  .footer-base{ padding:40px 0; display:flex; justify-content:space-between; color:#7d9788; font-family:var(--mono); font-size:12px; flex-wrap:wrap; gap:12px; border-top:1px solid #2d4a37; margin-top:16px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+    html{ scroll-behavior:auto; }
+  }
+  @media (max-width:720px){
+    .about-grid{ grid-template-columns:1fr; }
+    section{ padding:72px 0; }
+    .hero{ padding:88px 0 64px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">Tsega<span>.dev</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#community">Community</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-bg" id="heroCircuit" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Senior Software Architect · 20+ Years · Addis Ababa, ET</p>
+    <h1 class="hero-name">Tsegaselassie Tadesse</h1>
+    <p class="hero-tagline">"Senior Software Architect — turning complex systems into products people trust."</p>
+    <p class="hero-sub">From CTO leadership to cloud-native architecture for global brands — 20+ years designing the systems behind the software, not just the screens.</p>
+
+    <div class="terminal">
+      <div class="terminal-bar"><span></span><span></span><span></span><span class="lbl">tsega@architecture — zsh</span></div>
+      <div class="terminal-body" id="termBody"></div>
+    </div>
+
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#work">View systems I've architected →</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num">20+</div><div class="stat-lbl">Years in software</div></div>
+      <div class="stat"><div class="stat-num">20+</div><div class="stat-lbl">Client projects delivered</div></div>
+      <div class="stat"><div class="stat-num">1M+</div><div class="stat-lbl">Records analyzed, NIJIS</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Global enterprise brands</div></div>
+      <div class="stat"><div class="stat-num">7yrs</div><div class="stat-lbl">As CTO, Cybersoft</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="photo-banner-wrap" style="padding:0; border-bottom:1px solid var(--border);">
+  <div class="photo-banner">
+    <div class="photo-half">
+      <img src="https://images.unsplash.com/photo-1580320209809-a0c51e645872?auto=format&fit=crop&w=1200&q=70" alt="Highlands landscape near Lalibela, Ethiopia" loading="lazy">
+      <div class="photo-caption"><span>Lalibela, Ethiopia</span><span>Photo — Mulugeta Wolde</span></div>
+    </div>
+    <div class="photo-half">
+      <img src="https://images.unsplash.com/photo-1549473125-a626b780ed83?auto=format&fit=crop&w=1200&q=70" alt="Addis Ababa city skyline at night" loading="lazy">
+      <div class="photo-caption"><span>Addis Ababa Cityscape</span><span>Photo — Fitsum Admasu</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="avatar-block">
+          <img src="tsega-headshot.jpg" alt="Tsegaselassie Tadesse" class="avatar-photo">
+          <div class="avatar-tag"><span>Addis Ababa, ET</span><span>B.Sc. CS, 2005</span></div>
+        </div>
+      </div>
+      <div class="reveal about-copy">
+        <p class="section-eyebrow" style="margin-bottom:18px;">About</p>
+        <p><strong>I'm Tsega</strong> — a senior software architect who's spent 20+ years designing systems: custom CMS platforms, cloud-native infrastructure, and the integrations that hold them together. My path ran through seven years as <strong>CTO of Cybersoft</strong>, senior architecture consulting for Symphony3 in Melbourne, and full-stack delivery for global brands — L'Oréal, Bayer, and the UK Hydrographic Office among them.</p>
+        <p>Drupal is one system I know deeply — it's where a lot of that architecture work has lived. But the toolkit runs wider: <strong>PHP and Symfony, Node.js, Vue and React, Ruby on Rails, C#</strong> — backed by Docker, Kubernetes, and CI/CD pipelines I've built from scratch. Two Acquia certifications, and a growing interest in Fintech, applied AI, and graph databases.</p>
+        <p>Outside client work, I organize and mentor. I lead <strong>Amharic translation</strong> for Drupal, founded and run the <strong>Ethiopian Drupal community</strong>, and have trained developers directly — from a Women in Tech bootcamp in Addis Ababa to onboarding new engineers at the Orange Innovation Hub in Dakar.</p>
+        <div class="lang-row">
+          <span class="chip">Amharic — native</span>
+          <span class="chip">English — fluent</span>
+          <span class="chip">Open to: Architecture · Fintech · AI · Community</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-eyebrow">Experience</p>
+        <h2 class="section-title">One thread, branching wide.</h2>
+      </div>
+      <p class="section-note">From CTO to senior architect — leading systems and the teams that build them.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="t-row reveal">
+        <div class="t-date">Feb 2025 →</div>
+        <div>
+          <div class="t-dot"></div>
+          <div class="t-role">Senior Software Engineer</div>
+          <div class="t-org">Big Blue Door — London, UK (Remote)</div>
+          <div class="t-desc">Custom Drupal modules with PHP and Symfony components, complex data migrations, and accessible Twig/SCSS/JS front ends. Owns web service integrations (REST/JSON, Apache Solr) and CI/CD-driven maintenance.</div>
+        </div>
+      </div>
+      <div class="t-row reveal">
+        <div class="t-date">Aug 2021 → Jan 2025</div>
+        <div>
+          <div class="t-dot"></div>
+          <div class="t-role">Senior Technical Consultant — Drupal, Integration &amp; GIS</div>
+          <div class="t-org">Symphony3 — Melbourne, Australia (Remote)</div>
+          <div class="t-desc">Architected systems integrations and rebuilt the company's flagship product as a cloud-native, Kubernetes-deployed application. Delivered 20+ client projects and mentored the wider engineering team on DevOps practice.</div>
+        </div>
+      </div>
+      <div class="t-row reveal">
+        <div class="t-date">Dec 2019 → Present</div>
+        <div>
+          <div class="t-dot"></div>
+          <div class="t-role">Web Systems Consultant</div>
+          <div class="t-org">CIMMYT (Int'l Maize &amp; Wheat Improvement Center) — Texcoco, Mexico (Remote)</div>
+          <div class="t-desc">Leads a distributed team building the center's Learning Management System, and built a crop-production decision-support tool on GeoNode, an open-source geospatial CMS. Ongoing alongside other roles.</div>
+        </div>
+      </div>
+      <div class="t-row reveal">
+        <div class="t-date">Jan 2018 → Jul 2021</div>
+        <div>
+          <div class="t-dot"></div>
+          <div class="t-role">Frontend Developer</div>
+          <div class="t-org">Axelerant — Atlanta, USA (Remote)</div>
+          <div class="t-desc">Owned UI/UX for internal and client-facing web projects, from wireframes to responsive builds. Represented the company in the Drupal community — organizing meetups, speaking internationally, contributing code and translations.</div>
+        </div>
+      </div>
+      <div class="t-row reveal">
+        <div class="t-date">May 2017 → May 2018</div>
+        <div>
+          <div class="t-dot"></div>
+          <div class="t-role">Senior Drupal Developer (Consultant)</div>
+          <div class="t-org">University of the Arts London — London, UK (Remote)</div>
+          <div class="t-desc">Technical lead for the Institute for Conservation of Historic and Artistic Works, overseeing TDD/BDD-tested development across the IIC and Ligatus web platforms.</div>
+        </div>
+      </div>
+      <div class="t-row reveal">
+        <div class="t-date">Dec 2015 → Dec 2017</div>
+        <div>
+          <div class="t-dot"></div>
+          <div class="t-role">Web Systems Specialist</div>
+          <div class="t-org">International Livestock Research Institute — Addis Ababa, Ethiopia</div>
+          <div class="t-desc">Managed Linux infrastructure and led Drupal/WordPress platforms for the institute's Communication &amp; Knowledge Management department, including the CGSpace document repository.</div>
+        </div>
+      </div>
+      <div class="t-row reveal">
+        <div class="t-date">May 2008 → Nov 2015</div>
+        <div>
+          <div class="t-dot"></div>
+          <div class="t-role">Chief Technology Officer</div>
+          <div class="t-org">Cybersoft p.l.c — Addis Ababa, Ethiopia</div>
+          <div class="t-desc">Grew from Software Engineer to Team Lead to CTO over seven years — steering technical direction, product portfolio, and client relationships while guiding delivery across the full SDLC.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-cta">
+  <div class="wrap">
+    <div class="blog-cta-inner reveal">
+      <div>
+        <p class="blog-cta-tag">Coming soon</p>
+        <h2 class="blog-cta-title">Long-form writing on architecture, Drupal, and the open web.</h2>
+        <p class="blog-cta-sub">I'm building out a blog to share deeper technical writeups and lessons from 20+ years in the field. Get notified when the first post goes up.</p>
+      </div>
+      <a class="btn btn-primary" href="mailto:tsegaselassi@gmail.com?subject=Notify%20me%20when%20the%20blog%20launches">Get notified →</a>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-eyebrow">Selected work</p>
+        <h2 class="section-title">Systems, not just sites.</h2>
+      </div>
+      <p class="section-note">Architecture and engineering work spanning CMS platforms, cloud infrastructure, and custom builds — Drupal is one system among several.</p>
+    </div>
+
+    <div class="proj-grid reveal">
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">Symphony3 White Label</span><span class="proj-metric">20+ client rollouts</span></div>
+        <p class="proj-desc">A cloud-native platform for Australian Local Government, architected on Twelve-Factor principles with a full documented design system and Kubernetes deployment.</p>
+        <div class="proj-tags"><span class="tag">Cloud-native</span><span class="tag">Kubernetes</span><span class="tag">Architecture</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">Melco Resort Websites</span><span class="proj-metric">5 sites, 1 backend</span></div>
+        <p class="proj-desc">Transformed 5 static resort sites into Angular apps on a single decoupled Drupal 8 backend, with a shared component-based design system.</p>
+        <div class="proj-tags"><span class="tag">Decoupled</span><span class="tag">Angular</span><span class="tag">Design systems</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">paigo.com</span><span class="proj-metric">Decoupled, multilingual</span></div>
+        <p class="proj-desc">Progressively decoupled Drupal 8 + React build, implementing shared UI components in PatternLab and validated, API-driven form flows.</p>
+        <div class="proj-tags"><span class="tag">React</span><span class="tag">API integration</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">UK Hydrographic Office</span><span class="proj-metric">LMS + e-commerce</span></div>
+        <p class="proj-desc">Migrated a Drupal 7 Opigno-based LMS to Drupal 8, building a new custom theme and porting e-commerce functionality.</p>
+        <div class="proj-tags"><span class="tag">System migration</span><span class="tag">Opigno</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">L'Oréal Finance</span><span class="proj-metric">loreal-finance.com/fr</span></div>
+        <p class="proj-desc">Part of the team migrating a legacy ASP.NET application to Drupal 8, including third-party API integrations for page components.</p>
+        <div class="proj-tags"><span class="tag">System migration</span><span class="tag">API integration</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">Bayer Pet Portal</span><span class="proj-metric">mypetandi.bayer.com</span></div>
+        <p class="proj-desc">Primary frontend developer turning the site design into a responsive Drupal 8 theme, with consistent design-system artifacts throughout.</p>
+        <div class="proj-tags"><span class="tag">Drupal 8</span><span class="tag">Theming</span></div>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:96px;">
+      <div>
+        <p class="section-eyebrow">Independent &amp; open source</p>
+        <h2 class="section-title">Systems built end to end.</h2>
+      </div>
+      <p class="section-note">Public projects, self-architected — from data platforms to a 12-subsystem ERP.</p>
+    </div>
+
+    <div class="proj-grid reveal">
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">Cyber ERP</span><span class="proj-metric">12 institutions</span></div>
+        <p class="proj-desc">A 12-subsystem ERP architected on ASP.NET MVC and SQL Server, deployed across a dozen public and private institutions in Ethiopia.</p>
+        <div class="proj-tags"><span class="tag">.NET MVC</span><span class="tag">System design</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">NIJIS</span><span class="proj-metric">1M+ responses analyzed</span></div>
+        <p class="proj-desc">National Integrated Justice Information System — led a Ruby on Rails build that turned a national survey into 5,000+ pages of reporting.</p>
+        <div class="proj-tags"><span class="tag">Ruby on Rails</span><span class="tag">Data systems</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">DAGRIS</span><span class="proj-metric">100,000s of records</span></div>
+        <p class="proj-desc">Domestic Animal Genetic Resources Information System — a Drupal 7 + D3.js data platform built and migrated end to end for ILRI.</p>
+        <div class="proj-tags"><span class="tag">Drupal 7</span><span class="tag">D3.js</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">restaculous</span><span class="proj-metric">npm package</span></div>
+        <p class="proj-desc">An opinionated CLI tool that generates a REST API app from scratch, with integration testing built in.</p>
+        <div class="proj-tags"><span class="tag">Node.js</span><span class="tag">CLI</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">CGSpace ↔ ContentDM Bridge</span><span class="proj-metric">github.com/ilri</span></div>
+        <p class="proj-desc">A data bridge letting two research institutes share published content between repositories with minimal manual effort.</p>
+        <div class="proj-tags"><span class="tag">Meteor.js</span><span class="tag">Integration</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-name">Excel Importer</span><span class="proj-metric">Drupal module</span></div>
+        <p class="proj-desc">A maintained Drupal module for importing structured Excel data directly into content, built for the CIMMYT SRA platform.</p>
+        <div class="proj-tags"><span class="tag">Drupal</span><span class="tag">PHP</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-eyebrow" style="color:var(--forest-bright);">Community organizing</p>
+        <h2 class="section-title">Growing systems and people.</h2>
+      </div>
+      <p class="section-note">Where the mentor side of the brand shows up most.</p>
+    </div>
+
+    <div class="community-grid reveal">
+      <div class="c-card">
+        <div class="c-icon">ET</div>
+        <div class="c-title">Ethiopian Drupal Group</div>
+        <div class="c-desc">Organizer of the Ethiopian Group on Drupal.org — building a local hub for Ethiopia's Drupal developers.</div>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">'23</div>
+        <div class="c-title">Contribution Weekend, 2023</div>
+        <div class="c-desc">Organized Drupal Global Contribution Weekend (Ethiopia) — a local chapter of Drupal's worldwide contribution event.</div>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">AM</div>
+        <div class="c-title">Amharic translations</div>
+        <div class="c-desc">Lead contributor to Drupal's Amharic localization, making the platform accessible to Amharic-speaking users.</div>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">DC</div>
+        <div class="c-title">DrupalCon volunteer</div>
+        <div class="c-desc">Volunteered at DrupalCon Vienna 2025 and DrupalCon Chicago 2026, and spoke at Drupal Europe 2018.</div>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">WIT</div>
+        <div class="c-title">Women in Tech, Addis Ababa</div>
+        <div class="c-desc">Trained young women in Node.js backend engineering under the IFC's Women In Tech program — Express, MongoDB, REST APIs, CI/CD.</div>
+      </div>
+      <div class="c-card">
+        <div class="c-icon">SN</div>
+        <div class="c-title">Orange Innovation Hub, Dakar</div>
+        <div class="c-desc">Designed and delivered end-to-end Drupal onboarding for new graduates in Senegal, then mentored trainees into shipping real products.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-eyebrow">Stack</p>
+        <h2 class="section-title">What I architect with.</h2>
+      </div>
+    </div>
+    <div class="skills-wrap reveal">
+      <span class="skill-chip lead">Systems Architecture</span>
+      <span class="skill-chip lead">API Design</span>
+      <span class="skill-chip lead">Cloud-Native (Docker / Kubernetes)</span>
+      <span class="skill-chip lead">DevOps &amp; CI/CD</span>
+    </div>
+    <div class="skills-wrap reveal" style="margin-top:14px;">
+      <span class="skill-chip">PHP</span>
+      <span class="skill-chip">Symfony</span>
+      <span class="skill-chip">JavaScript</span>
+      <span class="skill-chip">Drupal</span>
+      <span class="skill-chip">Vue.js</span>
+      <span class="skill-chip">React.js</span>
+      <span class="skill-chip">Node.js</span>
+      <span class="skill-chip">Ruby on Rails</span>
+      <span class="skill-chip">WordPress</span>
+      <span class="skill-chip">Meteor.js</span>
+      <span class="skill-chip">Tailwind CSS</span>
+      <span class="skill-chip">C#</span>
+    </div>
+    <div class="skills-wrap reveal" style="margin-top:14px;">
+      <span class="skill-chip muted">MySQL</span>
+      <span class="skill-chip muted">PostgreSQL</span>
+      <span class="skill-chip muted">MongoDB</span>
+      <span class="skill-chip muted">Neo4j</span>
+      <span class="skill-chip muted">SQL Server</span>
+      <span class="skill-chip muted">AWS</span>
+      <span class="skill-chip muted">OpenShift</span>
+      <span class="skill-chip muted">Prometheus / Grafana</span>
+      <span class="skill-chip muted">Vercel / Netlify</span>
+      <span class="skill-chip muted">Team Building &amp; Delegation</span>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-eyebrow">Education &amp; certification</p>
+        <h2 class="section-title">Credentials on record.</h2>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="t-row reveal">
+        <div class="t-date">Oct 2019</div>
+        <div><div class="t-dot"></div><div class="t-role">Acquia Certified Frontend Specialist — Drupal 8</div></div>
+      </div>
+      <div class="t-row reveal">
+        <div class="t-date">May 2017</div>
+        <div><div class="t-dot"></div><div class="t-role">Acquia Certified Site Builder — Drupal 7</div></div>
+      </div>
+      <div class="t-row reveal">
+        <div class="t-date">Apr 2017</div>
+        <div><div class="t-dot"></div><div class="t-role">Web Backend Application Engineering — Node.js</div><div class="t-org">Gebeya Academy</div></div>
+      </div>
+      <div class="t-row reveal">
+        <div class="t-date">Jul 2005</div>
+        <div><div class="t-dot"></div><div class="t-role">B.Sc. Computer Science</div><div class="t-org">Addis Ababa University</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="section-eyebrow reveal" style="color:var(--gold);">Contact</p>
+    <h2 class="contact-head reveal">Architecting something in Drupal, cloud, or the open web? <em>Let's talk.</em></h2>
+
+    <div class="contact-links reveal">
+      <a class="clink" href="https://github.com/tsega" target="_blank" rel="noopener">
+        <span class="clink-icon">GH</span>
+        <span class="clink-body"><span class="clink-title">GitHub</span><span class="clink-sub">github.com/tsega</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="clink" href="https://gitlab.com/tsega" target="_blank" rel="noopener">
+        <span class="clink-icon">GL</span>
+        <span class="clink-body"><span class="clink-title">GitLab</span><span class="clink-sub">gitlab.com/tsega</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="clink" href="https://www.drupal.org/u/tsega" target="_blank" rel="noopener">
+        <span class="clink-icon">DR</span>
+        <span class="clink-body"><span class="clink-title">Drupal.org</span><span class="clink-sub">drupal.org/u/tsega</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="clink" href="https://www.linkedin.com/in/tsegaselassie/" target="_blank" rel="noopener">
+        <span class="clink-icon">IN</span>
+        <span class="clink-body"><span class="clink-title">LinkedIn</span><span class="clink-sub">tsegaselassie</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="clink" href="https://twitter.com/tsegat" target="_blank" rel="noopener">
+        <span class="clink-icon">X</span>
+        <span class="clink-body"><span class="clink-title">X / Twitter</span><span class="clink-sub">@tsegat</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="clink" href="mailto:tsegaselassi@gmail.com">
+        <span class="clink-icon">@</span>
+        <span class="clink-body"><span class="clink-title">Email</span><span class="clink-sub">tsegaselassi@gmail.com</span></span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="footer-base">
+      <span>© 2026 Tsegaselassie Tadesse. Built with intent, not a template.</span>
+      <span>Addis Ababa, Ethiopia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const ns = 'http://www.w3.org/2000/svg';
+  function svgEl(tag, attrs){ const el = document.createElementNS(ns, tag); for (const k in attrs) el.setAttribute(k, attrs[k]); return el; }
+  function line(svg, x1,y1,x2,y2, opts={}){
+    svg.appendChild(svgEl('line', { x1,y1,x2,y2, stroke: opts.stroke||'#e0982b', 'stroke-width': opts.width||1.4, 'stroke-dasharray': opts.dash||'none', opacity: opts.opacity??0.7, 'stroke-linecap':'round' }));
+  }
+  function curveP(svg, x1,y1,cx,cy,x2,y2, opts={}){
+    svg.appendChild(svgEl('path', { d:`M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`, stroke: opts.stroke||'#e0982b', 'stroke-width': opts.width||1.4, fill:'none', opacity: opts.opacity??0.7, 'stroke-linecap':'round' }));
+  }
+  function dot(svg, x, y, r, fill, opacity){ svg.appendChild(svgEl('circle', { cx:x, cy:y, r, fill, opacity: opacity??1 })); }
+  function rectNode(svg, x, y, s, fill){ svg.appendChild(svgEl('rect', { x:x-s/2, y:y-s/2, width:s, height:s, fill, rx:1.5 })); }
+
+  // Secondary signature: circuit trace — hero background
+  (function(){
+    const host = document.getElementById('heroCircuit');
+    const svg = svgEl('svg', { viewBox:'0 0 1120 480', preserveAspectRatio:'xMidYMid slice' });
+    const paths = [
+      [[60,60],[60,180],[280,180],[280,60],[500,60]],
+      [[500,60],[500,280],[740,280],[740,140],[980,140]],
+      [[280,180],[280,340],[600,340],[600,180],[740,180]],
+      [[980,140],[980,340],[1080,340]]
+    ];
+    paths.forEach(pts => {
+      for (let i=0;i<pts.length-1;i++){ line(svg, pts[i][0],pts[i][1], pts[i+1][0],pts[i+1][1], { dash:'4 5', opacity:0.4 }); }
+      pts.forEach(([x,y]) => rectNode(svg, x, y, 6, '#e0982b'));
+    });
+    host.appendChild(svg);
+  })();
+
+  // Terminal typing sequence
+  const lines = [
+    { p: '$ ', t: 'whoami', out: false },
+    { p: '', t: 'Tsegaselassie Tadesse — senior software architect, systems designer, community builder', out: true },
+    { p: '$ ', t: 'uptime --engineering', out: false },
+    { p: '', t: '20+ years leading architecture across CMS, cloud, and custom platforms', out: true },
+    { p: '$ ', t: '_', out: false, cursorOnly: true }
+  ];
+  const termBody = document.getElementById('termBody');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function renderStatic(){
+    termBody.innerHTML = `
+      <div><span class="prompt">$</span> whoami</div>
+      <div class="out">Tsegaselassie Tadesse — senior software architect, systems designer, community builder</div>
+      <div><span class="prompt">$</span> uptime --engineering</div>
+      <div class="out">20+ years leading architecture across CMS, cloud, and custom platforms</div>
+      <div><span class="prompt">$</span> <span class="cursor"></span></div>
+    `;
+  }
+  async function typeSequence(){
+    for (const l of lines){
+      const row = document.createElement('div');
+      if (l.out) row.classList.add('out');
+      termBody.appendChild(row);
+      if (l.cursorOnly){ row.innerHTML = '<span class="prompt">$</span> <span class="cursor"></span>'; return; }
+      const promptSpan = l.p ? `<span class="prompt">${l.p}</span>` : '';
+      row.innerHTML = promptSpan;
+      const textTarget = document.createElement('span');
+      row.appendChild(textTarget);
+      for (let i = 0; i < l.t.length; i++){ textTarget.textContent += l.t[i]; await new Promise(r => setTimeout(r, l.out ? 8 : 32)); }
+      await new Promise(r => setTimeout(r, l.out ? 250 : 150));
+    }
+  }
+  if (reduceMotion){ renderStatic(); } else { typeSequence(); }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduceMotion){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
