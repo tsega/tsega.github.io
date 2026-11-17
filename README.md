@@ -18,6 +18,8 @@ bun run dev        # http://localhost:3000
 | Command            | What it does                                              |
 | ------------------ | --------------------------------------------------------- |
 | `bun run dev`      | Dev server with hot reload                                |
+| `bun run lint`     | Check code style with ESLint (`lint:fix` to auto-fix)     |
+| `bun run typecheck`| Type check, including `.vue` files                        |
 | `bun run generate` | Prerender the whole site to `.output/public`              |
 | `bun run preview`  | Serve the generated output locally                        |
 
@@ -68,7 +70,8 @@ because `content.config.ts` validates them.
 
 The site is hosted on **GitHub Pages** at <https://tsega.dev>.
 
-- Every push to `master` runs `.github/workflows/deploy.yml`, which runs `bun run generate`
-  and publishes `.output/public`.
+- Every pull request runs `.github/workflows/deploy.yml`: lint, typecheck and
+  `bun run generate`.
+- Every push to `master` runs the same checks, then publishes `.output/public`.
 - `public/CNAME` sets the custom domain. Don't delete it, or Pages drops `tsega.dev`.
 - Work on a branch and open a PR. Merging to `master` deploys immediately.
