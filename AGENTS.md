@@ -4,7 +4,7 @@ Rules for working on this codebase. They apply to people and to AI coding assist
 
 ## Project
 
-The personal portfolio and blog of Tsegaselassie "Tsega" Tadesse, live at <https://tsega.dev>. It is a fully static site: a single-page portfolio ported from the reference design in `design/portfolio.html`, plus a Markdown blog.
+The personal portfolio and blog of Tsegaselassie "Tsega" Tadesse, live at <https://tsega.dev>. It is a fully static site: a single-page portfolio ported from the reference design in `design/portfolio/index.dc.html`, plus a Markdown blog.
 
 Work is tracked as GitHub issues in [`tsega/tsega.github.io`](https://github.com/tsega/tsega.github.io/issues), grouped by milestone.
 
@@ -24,7 +24,7 @@ Work is tracked as GitHub issues in [`tsega/tsega.github.io`](https://github.com
 - `content/blog/`: blog posts, one Markdown file per post
 - `content/data/`: homepage copy as YAML (experience, projects, skills and so on)
 - `content.config.ts`: content collections and their schemas
-- `design/portfolio.html`: the reference design; not deployed
+- `design/portfolio/`: the reference design exported from Claude Design; not deployed
 - `eslint/`: our own lint rules
 - `public/`: copied as-is to the site root (`CNAME`, favicon, images, `robots.txt`)
 
@@ -72,7 +72,10 @@ Every commit message follows this layout:
 
 ## Design and user interface
 
-- `design/portfolio.html` is the source of truth for how the site looks. Match its layout, spacing, type and breakpoints (640, 720, 760 and 860px). Don't edit it as part of feature work; a design change is its own change.
+- `design/portfolio/index.dc.html` is the source of truth for how the site looks. Match its layout, spacing, type and colours: 1200px content width, `clamp(20px, 4vw, 48px)` gutters, the 760px mobile breakpoint, Archivo for text, Pinyon Script for the hero name, flat surfaces with zero corner radius and strong 2px rules. Don't edit it as part of feature work; a design change is its own change.
+- The design is a Claude Design export, not production code. It uses inline styles, `{{ }}` bindings, `<sc-if>`/`<sc-for>` and `<image-slot>` elements, and the list data (projects, skills, experience, links) lives in the `DCLogic` script at the bottom of the file. Translate it into Vue components, Tailwind utilities and content data; never copy the inline styles or the runtime scripts (`support.js`, `image-slot.js`).
+- Its `_ds/` folder is the Modernist design system the layout was built on. Follow its structural rules (flat, 0 radius, 2px dividers, flush-left labels), but take colours from the page, not from `_ds/styles.css`: the page overrides its red palette with espresso and gold.
+- The photos embedded in `.image-slots.state.json` are previews only. Production images come from the originals through `bun run image`.
 - Use the design tokens through Tailwind utilities (`bg-bg`, `text-text-muted`, `border-border`, `text-accent` and so on). Never hard-code the palette's hex values in components. Switch a block to the green palette with `data-theme="forest"`.
 - Style with Tailwind utility classes. Write custom CSS only for what utilities can't express (keyframes, layered gradients, blend modes), in `main.css` or a component's scoped `<style>`. No static inline styles.
 - Do not add component libraries or UI kits. Shared pieces (buttons, chips, section heads) become components in `app/components/`.
@@ -90,7 +93,9 @@ Every commit message follows this layout:
 - Blog posts live in `content/blog/<slug>.md`; the file name is the URL. Frontmatter must match the schema in `content.config.ts`.
 - Facts about Tsega (roles, employers, dates, projects, metrics, certifications) come from the existing content or from Tsega. Never invent, round up or embellish them. When a fact looks wrong or inconsistent, flag it instead of fixing it silently.
 - Don't write blog posts or homepage copy in Tsega's voice unless asked. Placeholder text is clearly marked as placeholder.
-- Images are self-hosted under `public/images/`, never hotlinked. Every image has meaningful alt text (or `alt=""` when decorative), and third-party photos credit the photographer.
+- Images are self-hosted under `public/images/`, never hotlinked. Never commit an original straight from a camera or phone: it carries metadata (EXIF, including GPS location, XMP and IPTC) and is far too large.
+- Add photos with `bun run image <source> <name> <width...>`. It strips all metadata and writes the smallest AVIF and JPEG that reach a SSIMULACRA 2 score of 80 (no visible difference side by side) at each width. Generate the widths the image is actually shown at, at 1× and 2×, and serve them with `<picture>`, `srcset` and `sizes`: AVIF first, JPEG as the fallback. Don't hand-tune quality settings or add WebP; AVIF is about half the size of WebP at the same quality.
+- Illustrations and placeholders are hand-written SVG in the palette's colours. Every image has meaningful alt text (or `alt=""` when decorative), and third-party photos credit the photographer.
 
 ## Code rules
 

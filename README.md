@@ -33,19 +33,56 @@ content/
   blog/*.md            # blog posts
 content.config.ts      # content collections + frontmatter schema
 design/
-  portfolio.html       # reference design — source of truth for the UI port
+  portfolio/           # reference design from Claude Design — source of truth for the UI port
 public/                # copied as-is to the site root (CNAME, favicon, logo, robots.txt)
 ```
 
 ## Design tokens
 
-The palette from `design/portfolio.html` lives in `app/assets/css/main.css` as Tailwind
+The palette from the reference design lives in `app/assets/css/main.css` as Tailwind
 theme variables, so utilities like `bg-bg`, `text-text-muted`, `border-border` and
 `text-accent` work everywhere.
 
 - **Espresso** (default): dark roast backgrounds, cream text, gold accent.
 - **Forest**: add `data-theme="forest"` to any wrapper to switch it to the green palette
   used by the contact footer and blog call-to-action.
+
+## Adding images
+
+Keep original photos **outside** the repo. Camera and phone files carry metadata such as GPS
+location, and anything in `public/` is published. Generate web versions with:
+
+```bash
+bun run image ~/Pictures/photo.jpg my-photo 400 800
+```
+
+This writes `public/images/my-photo-400.avif`, `my-photo-400.jpg` and so on. Each file is the
+smallest one that still looks the same as the original: the script searches for the lowest
+quality setting that reaches a [SSIMULACRA 2](https://github.com/cloudinary/ssimulacra2)
+score of 80 (pass `--target=85` for more headroom). All metadata is removed, and widths
+larger than the source are skipped rather than upscaled.
+
+Crop to the shape the layout shows, so no hidden pixels are shipped:
+
+| Option           | Effect                                                              |
+| ---------------- | ------------------------------------------------------------------- |
+| `--aspect=3:1`   | Crop to this aspect ratio before resizing                           |
+| `--gravity=north`| Which part to keep: `center`, `north`, `south`, `east`, `west`, `attention` |
+| `--focus=0.25`   | Exact crop position, 0 (top/left) to 1 (bottom/right)               |
+| `--grayscale`    | Bake in black and white, for images the design always shows that way |
+
+The images on the site were generated with:
+
+```bash
+P=../../resources/pictures
+bun run image <headshot.jpg> tsega-headshot 320 480 640 --aspect=4:5 --grayscale
+bun run image "$P/photo_2026-10-04 09.53.28.jpeg" band-acacia 768 960 --aspect=3:1
+bun run image "$P/header_one.jpg" band-babogaya-lake 768 1280 1900
+bun run image "$P/IMG_20190512_183517.jpg" band-almadies 768 1280 1920 2560 --aspect=3:1 --focus=0.25
+bun run image "$P/IMG_20190515_131442.jpg" community-training 480 768 1080
+```
+
+It needs the `ssimulacra2` tool from libjxl: `brew install jpeg-xl`.
 
 ## Writing a blog post
 

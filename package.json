@@ -10,7 +10,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "image": "bun scripts/optimize-image.mjs"
   },
   "dependencies": {
     "@nuxt/content": "3.16.0",
@@ -27,6 +28,7 @@
     "@nuxt/eslint": "^1.17.0",
     "eslint": "^10.13.0",
     "eslint-plugin-jsdoc": "^63.3.3",
+    "sharp": "0.34.4",
     "typescript": "~6.0.3",
     "vue-tsc": "^3.3.14"
   },

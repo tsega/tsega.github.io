@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Tsegaselassie Tadesse — Senior Software Architect</title>
+<link rel="stylesheet" href="_ds/modernist-fe6195df-cb36-49d6-b29b-d95758ec3206/styles.css">
+<script src="_ds/modernist-fe6195df-cb36-49d6-b29b-d95758ec3206/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Abyssinica+SIL&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#1b1109;color:#f3ebdd;font-family:var(--font-body),'Archivo',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#f0ac45;text-decoration:none}
+a:hover{color:#f6efe2}
+::selection{background:#e0982b;color:#1b1109}
+:focus-visible{outline:2px solid #e0982b;outline-offset:2px}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;background:#1b1109">
+
+<header style="position:sticky;top:0;z-index:20;background:#1b1109;border-bottom:2px solid #4a3824">
+  <nav style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px);height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" style="display:flex;align-items:center;gap:12px;color:#f6efe2">
+      <img src="assets/tsega-logo.svg" alt="ፀጋ" style="height:44px;width:auto;display:block">
+      <span style="font-weight:700;font-size:15px;letter-spacing:0.01em">Tsega Tadesse</span>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;align-items:center;gap:28px;font-size:13px;font-weight:500">
+      <a href="#about" style="color:#b6a58e" style-hover="color:#e0982b">About</a>
+      <a href="#writing" style="color:#b6a58e" style-hover="color:#e0982b">Writing</a>
+      <a href="#work" style="color:#b6a58e" style-hover="color:#e0982b">Work</a>
+      <a href="#community" style="color:#b6a58e" style-hover="color:#e0982b">Community</a>
+      <a href="#contact" style="color:#1b1109;background:#e0982b;padding:8px 14px;font-weight:700" style-hover="background:#f0ac45;color:#1b1109">Contact</a>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="Menu" aria-expanded="{{ menuOpen }}" style="width:44px;height:44px;margin-right:-10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:transparent;border:0;cursor:pointer;padding:0">
+        <span style="display:block;width:22px;height:2px;background:#e0982b;transition:transform .2s;transform:{{ bar1 }}"></span>
+        <span style="display:block;width:22px;height:2px;background:#e0982b;transition:opacity .2s;opacity:{{ bar2 }}"></span>
+        <span style="display:block;width:22px;height:2px;background:#e0982b;transition:transform .2s;transform:{{ bar3 }}"></span>
+      </button>
+    </sc-if>
+  </nav>
+  <sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:0;right:0;top:100%;background:#1b1109;border-bottom:2px solid #4a3824;display:flex;flex-direction:column;padding:8px clamp(20px,4vw,48px) 20px">
+      <a href="#about" onClick="{{ closeMenu }}" style="display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid #3a2c1c;font-size:17px;font-weight:600;color:#f6efe2" style-hover="color:#e0982b"><span>About</span><span style="color:#e0982b">→</span></a>
+      <a href="#writing" onClick="{{ closeMenu }}" style="display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid #3a2c1c;font-size:17px;font-weight:600;color:#f6efe2" style-hover="color:#e0982b"><span>Writing</span><span style="color:#e0982b">→</span></a>
+      <a href="#work" onClick="{{ closeMenu }}" style="display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid #3a2c1c;font-size:17px;font-weight:600;color:#f6efe2" style-hover="color:#e0982b"><span>Work</span><span style="color:#e0982b">→</span></a>
+      <a href="#community" onClick="{{ closeMenu }}" style="display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid #3a2c1c;font-size:17px;font-weight:600;color:#f6efe2" style-hover="color:#e0982b"><span>Community</span><span style="color:#e0982b">→</span></a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="margin-top:20px;display:flex;justify-content:space-between;padding:16px 20px;background:#e0982b;font-size:16px;font-weight:700;color:#1b1109" style-hover="background:#f0ac45;color:#1b1109"><span>Contact</span><span>→</span></a>
+    </div>
+  </sc-if>
+</header>
+
+<section id="top" data-screen-label="Hero" style="position:relative;border-bottom:2px solid #4a3824;overflow:hidden">
+  <sc-if value="{{ showGrid }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(224,152,43,0.09) 1px,transparent 1px),linear-gradient(90deg,rgba(224,152,43,0.09) 1px,transparent 1px),linear-gradient(rgba(224,152,43,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(224,152,43,0.035) 1px,transparent 1px);background-size:120px 120px,120px 120px,24px 24px,24px 24px"></div>
+  </sc-if>
+  <div style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(56px,9vw,112px) clamp(20px,4vw,48px) clamp(48px,7vw,80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px;align-items:end">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#e0982b;margin-bottom:28px">
+        <span>A-00</span><span style="width:40px;height:1px;background:#e0982b"></span><span>Senior Software Architect</span>
+      </div>
+      <h1 style="margin:0;font-family:'Pinyon Script',cursive;font-size:clamp(52px,7.4vw,96px);line-height:1.1;font-weight:400;letter-spacing:0;color:#f6efe2;text-wrap:balance">Tsegaselassie Tadesse</h1>
+      <p style="margin:28px 0 0;display:flex;flex-wrap:wrap;gap:0 18px;font-size:clamp(28px,3.4vw,42px);line-height:1.1;font-weight:800;letter-spacing:-0.02em;color:#f6efe2"><span>Think<span style="color:#e0982b">.</span></span><span>Build<span style="color:#e0982b">.</span></span><span>Release<span style="color:#e0982b">.</span></span></p>
+      <p style="margin:16px 0 0;font-size:18px;line-height:1.5;color:#b6a58e;max-width:520px;text-wrap:pretty">I work through hard problems, design the systems that solve them, and ship them into the real world.</p>
+      <div style="margin-top:40px;display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+        <a href="#work" style="display:flex;align-items:center;justify-content:space-between;gap:48px;min-width:260px;padding:16px 20px;background:#e0982b;color:#1b1109;font-weight:700;font-size:15px" style-hover="background:#f0ac45;color:#1b1109" style-active="background:#c77f18">
+          <span>View flagship systems</span><span>→</span>
+        </a>
+        <a href="#contact" style="color:#b6a58e;font-size:14px;font-weight:600;border-bottom:1px solid #5a4329;padding-bottom:2px" style-hover="color:#e0982b;border-color:#e0982b">or get in touch</a>
+      </div>
+    </div>
+
+    <div style="border:2px solid #5a4329;background:#1b1109;font-size:13px">
+      <div style="display:flex;flex-direction:column;font-size:15px">
+        <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:baseline;padding:18px 20px;border-bottom:1px solid #3a2c1c">
+          <span style="font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Location</span>
+          <span style="font-weight:600;color:#f6efe2">Addis Ababa · remote worldwide</span>
+        </div>
+        <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:baseline;padding:18px 20px;border-bottom:1px solid #3a2c1c">
+          <span style="font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Open to</span>
+          <span style="font-weight:600;color:#f6efe2">Enterprise architecture · Intelligent systems</span>
+        </div>
+        <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:baseline;padding:18px 20px">
+          <span style="font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Contact</span>
+          <a href="mailto:tsegaselassi@gmail.com" style="font-weight:600;color:#e0982b;overflow-wrap:anywhere" style-hover="color:#f0ac45">tsegaselassi@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Stats" style="background:#2a1b10;border-bottom:2px solid #4a3824">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div style="padding:28px clamp(20px,3vw,32px);border-right:1px solid #3a2c1c">
+      <div style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#e0982b">20+</div>
+      <div style="margin-top:6px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#b6a58e">Years in software</div>
+    </div>
+    <div style="padding:28px clamp(20px,3vw,32px);border-right:1px solid #3a2c1c">
+      <div style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#e0982b">7 yrs</div>
+      <div style="margin-top:6px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#b6a58e">As CTO, Cybersoft</div>
+    </div>
+    <div style="padding:28px clamp(20px,3vw,32px);border-right:1px solid #3a2c1c">
+      <div style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#e0982b">5</div>
+      <div style="margin-top:6px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#b6a58e">Global enterprise brands</div>
+    </div>
+    <div style="padding:28px clamp(20px,3vw,32px)">
+      <div style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#e0982b">200+</div>
+      <div style="margin-top:6px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#b6a58e">Projects delivered, small to enterprise</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Photo — Site: Addis Ababa, Ethiopia" style="border-bottom:2px solid #4a3824">
+  <div style="position:relative;height:clamp(240px,34vw,460px);filter:{{ photoFilter }}">
+    <image-slot id="addis-wide" shape="rect" placeholder="Photo 1: Addis Ababa skyline (wide)"></image-slot>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:12px clamp(20px,4vw,48px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">
+    <span>Site: Addis Ababa, Ethiopia</span><span>9.03° N, 38.74° E</span>
+  </div>
+</section>
+
+<section id="about" data-screen-label="About" style="border-bottom:2px solid #4a3824">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,48px)">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;padding-bottom:18px;border-bottom:2px solid #4a3824;margin-bottom:48px">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#e0982b">01 — About</div>
+        <h2 style="margin:10px 0 0;font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;color:#f6efe2">Architect, engineer, organizer.</h2>
+      </div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Sheet A-01</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px">
+      <div>
+        <div style="position:relative;aspect-ratio:4/5;border:2px solid #4a3824;filter:grayscale(1) contrast(1.05)">
+          <image-slot id="headshot" shape="rect" placeholder="Headshot"></image-slot>
+        </div>
+        <div style="margin-top:10px;display:flex;justify-content:space-between;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#b6a58e">
+          <span>Addis Ababa, ET</span><span>B.Sc. CS, 2005</span>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <p style="margin:0;font-size:19px;line-height:1.5;color:#f3ebdd;text-wrap:pretty">I design systems, then lead the teams that build them. For two decades that has meant shaping platforms, integrations and infrastructure for organizations across Africa, Europe, Australia and the Americas, choosing the tools to fit the problem.</p>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #3a2c1c">
+          <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#b6a58e;padding-top:3px">Led</span>
+            <span style="font-size:15px;line-height:1.5;color:#f3ebdd">Cybersoft, Addis Ababa: engineer to CTO over seven years</span>
+          </div>
+          <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#b6a58e;padding-top:3px">Consulted</span>
+            <span style="font-size:15px;line-height:1.5;color:#f3ebdd">Symphony3 (Melbourne), CIMMYT, University of the Arts London</span>
+          </div>
+          <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#b6a58e;padding-top:3px">Shipped for</span>
+            <span style="font-size:15px;line-height:1.5;color:#f3ebdd">L'Oréal, Bayer, UK Hydrographic Office, Melco Resorts</span>
+          </div>
+          <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#b6a58e;padding-top:3px">Exploring</span>
+            <span style="font-size:15px;line-height:1.5;color:#f3ebdd">Intelligent systems, enterprise platforms, graph databases</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;border:2px solid #5a4329">
+        <div style="padding:22px 24px;border-bottom:1px solid #3a2c1c">
+          <div style="font-size:40px;font-weight:800;letter-spacing:-0.02em;line-height:1;color:#e0982b">7 years</div>
+          <div style="margin-top:8px;font-size:15px;font-weight:600;color:#f6efe2">Chief Technology Officer</div>
+          <div style="margin-top:2px;font-size:13px;color:#b6a58e">Cybersoft p.l.c, 2008–2015</div>
+        </div>
+        <div style="padding:22px 24px;border-bottom:1px solid #3a2c1c">
+          <div style="font-size:40px;font-weight:800;letter-spacing:-0.02em;line-height:1;color:#e0982b">1M+</div>
+          <div style="margin-top:8px;font-size:15px;font-weight:600;color:#f6efe2">Survey records analyzed</div>
+          <div style="margin-top:2px;font-size:13px;color:#b6a58e">National Integrated Justice Information System</div>
+        </div>
+        <div style="padding:22px 24px">
+          <div style="font-size:40px;font-weight:800;letter-spacing:-0.02em;line-height:1;color:#e0982b">2×</div>
+          <div style="margin-top:8px;font-size:15px;font-weight:600;color:#f6efe2">Acquia certified</div>
+          <div style="margin-top:2px;font-size:13px;color:#b6a58e">Frontend Specialist D8 · Site Builder D7</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="writing" data-screen-label="Writing" style="border-bottom:2px solid #3f6450;background:#1f3a2b">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,48px)">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;padding-bottom:18px;border-bottom:2px solid #3f6450;margin-bottom:48px">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#e0982b">02 — Writing</div>
+        <h2 style="margin:10px 0 0;font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;color:#f6efe2">Notes from the drawing board.</h2>
+      </div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#bccbb8">Sheet A-02</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:0;border:2px solid #3f6450">
+      <a href="#" style="display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding:clamp(28px,3vw,40px);background:#173022;color:#f6efe2;border-right:2px solid #3f6450;min-height:340px" style-hover="background:#1b3828;color:#f6efe2">
+        <div>
+          <div style="display:flex;gap:16px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#e0982b"><span>Architecture</span><span style="color:#bccbb8">Long read</span></div>
+          <h3 style="margin:18px 0 0;font-size:clamp(26px,3vw,36px);line-height:1.12;font-weight:800;letter-spacing:-0.015em;text-wrap:balance">Rebuilding a flagship product as a cloud-native platform</h3>
+          <p style="margin:16px 0 0;font-size:16px;line-height:1.55;color:#bccbb8;max-width:480px">Twelve-Factor principles, Kubernetes and a documented design system, applied to a white-label platform for Australian local government.</p>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid #33553f;font-size:13px;font-weight:600;color:#e0982b"><span>Read the post</span><span>→</span></div>
+      </a>
+      <div style="display:flex;flex-direction:column">
+        <a href="#" style="flex:1;display:flex;flex-direction:column;gap:12px;padding:28px;color:#f6efe2;border-bottom:1px solid #33553f" style-hover="background:#2a4a37;color:#f6efe2">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#e0982b">Open source</div>
+          <h3 style="margin:0;font-size:21px;line-height:1.25;font-weight:700;text-wrap:balance">Localizing Drupal into Amharic</h3>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:#bccbb8">What leading a translation effort teaches about building software for every language.</p>
+        </a>
+        <a href="#" style="flex:1;display:flex;flex-direction:column;gap:12px;padding:28px;color:#f6efe2;border-bottom:1px solid #33553f" style-hover="background:#2a4a37;color:#f6efe2">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#e0982b">Leadership</div>
+          <h3 style="margin:0;font-size:21px;line-height:1.25;font-weight:700;text-wrap:balance">Seven years as a CTO in Addis Ababa</h3>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:#bccbb8">Growing from engineer to technical lead of a product and services company.</p>
+        </a>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 28px;background:#173022">
+          <span style="font-size:14px;color:#f3ebdd">New posts by email</span>
+          <a href="mailto:tsegaselassi@gmail.com?subject=Subscribe%20to%20posts" style="display:flex;justify-content:space-between;gap:28px;padding:10px 14px;background:#e0982b;color:#1b1109;font-size:13px;font-weight:700" style-hover="background:#f0ac45;color:#1b1109"><span>Subscribe</span><span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Photo — Babogaya Lake" style="border-bottom:2px solid #3f6450">
+  <div style="position:relative;height:clamp(240px,34vw,460px);filter:{{ photoFilter }}">
+    <image-slot id="addis-street" shape="rect" placeholder="Photo 2: Babogaya Lake, Bishoftu"></image-slot>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:12px clamp(20px,4vw,48px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#bccbb8">
+    <span>Babogaya Lake, Debre Zeit (Bishoftu), Ethiopia</span><span>One of five crater lakes in the Bishoftu area</span>
+  </div>
+</section>
+
+<section id="work" data-screen-label="Work" style="border-bottom:2px solid #4a3824">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,48px)">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;padding-bottom:18px;border-bottom:2px solid #4a3824;margin-bottom:56px">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#e0982b">03 — Work</div>
+        <h2 style="margin:10px 0 0;font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;color:#f6efe2">Systems, not just sites.</h2>
+      </div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Sheet A-03</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:72px">
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:start">
+        <div>
+          <div style="position:relative;aspect-ratio:16/10;border:2px solid #4a3824;filter:{{ photoFilter }}">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;background-color:#221509;background-image:linear-gradient(rgba(224,152,43,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(224,152,43,0.08) 1px,transparent 1px);background-size:24px 24px;padding:24px;text-align:center">
+              <img src="https://cdn.simpleicons.org/drupal/e0982b" alt="Drupal logo" style="width:clamp(64px,9vw,104px);height:clamp(64px,9vw,104px);display:block">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <span style="font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-0.015em;color:#f6efe2">Drupal</span>
+                <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Built with</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#e0982b">
+            <span style="width:1px;height:10px;background:#e0982b"></span><span style="flex:1;height:1px;background:#e0982b"></span><span>20+ client rollouts</span><span style="flex:1;height:1px;background:#e0982b"></span><span style="width:1px;height:10px;background:#e0982b"></span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">01 · Symphony3, 2021–2025</div>
+          <h3 style="margin:10px 0 0;font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;color:#f6efe2">Symphony3 White Label</h3>
+          <div style="margin-top:24px;display:flex;flex-direction:column;border-top:2px solid #4a3824">
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e0982b;padding-top:3px">Brief</span><span style="font-size:15px;line-height:1.55;color:#f3ebdd">Rebuild the company's flagship product for Australian local government.</span></div>
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e0982b;padding-top:3px">Structure</span><span style="font-size:15px;line-height:1.55;color:#f3ebdd">Cloud-native on Twelve-Factor principles, deployed to Kubernetes, with a fully documented design system.</span></div>
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e0982b;padding-top:3px">Result</span><span style="font-size:15px;line-height:1.55;color:#f3ebdd">One platform carried 20+ client projects; the wider team was mentored on DevOps practice.</span></div>
+          </div>
+          <div style="margin-top:16px;font-size:13px;color:#b6a58e">Drupal · Kubernetes · Docker · CI/CD · Design systems</div>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:start">
+        <div>
+          <div style="position:relative;aspect-ratio:16/10;border:2px solid #4a3824;filter:{{ photoFilter }}">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;background-color:#221509;background-image:linear-gradient(rgba(224,152,43,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(224,152,43,0.08) 1px,transparent 1px);background-size:24px 24px;padding:24px;text-align:center">
+              <img src="https://cdn.simpleicons.org/dotnet/e0982b" alt="ASP.NET MVC logo" style="width:clamp(64px,9vw,104px);height:clamp(64px,9vw,104px);display:block">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <span style="font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-0.015em;color:#f6efe2">ASP.NET MVC</span>
+                <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Built with</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#e0982b">
+            <span style="width:1px;height:10px;background:#e0982b"></span><span style="flex:1;height:1px;background:#e0982b"></span><span>12 subsystems · 12 institutions</span><span style="flex:1;height:1px;background:#e0982b"></span><span style="width:1px;height:10px;background:#e0982b"></span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">02 · Cybersoft, Addis Ababa</div>
+          <h3 style="margin:10px 0 0;font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;color:#f6efe2">Cyber ERP</h3>
+          <div style="margin-top:24px;display:flex;flex-direction:column;border-top:2px solid #4a3824">
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e0982b;padding-top:3px">Brief</span><span style="font-size:15px;line-height:1.55;color:#f3ebdd">An enterprise resource planning suite for Ethiopian public and private institutions.</span></div>
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e0982b;padding-top:3px">Structure</span><span style="font-size:15px;line-height:1.55;color:#f3ebdd">Twelve subsystems architected on ASP.NET MVC and SQL Server.</span></div>
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e0982b;padding-top:3px">Result</span><span style="font-size:15px;line-height:1.55;color:#f3ebdd">Deployed across a dozen institutions.</span></div>
+          </div>
+          <div style="margin-top:16px;font-size:13px;color:#b6a58e">C# · ASP.NET MVC · SQL Server · System design</div>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:start">
+        <div>
+          <div style="position:relative;aspect-ratio:16/10;border:2px solid #4a3824;filter:{{ photoFilter }}">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;background-color:#221509;background-image:linear-gradient(rgba(224,152,43,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(224,152,43,0.08) 1px,transparent 1px);background-size:24px 24px;padding:24px;text-align:center">
+              <img src="https://cdn.simpleicons.org/rubyonrails/e0982b" alt="Ruby on Rails logo" style="width:clamp(64px,9vw,104px);height:clamp(64px,9vw,104px);display:block">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <span style="font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-0.015em;color:#f6efe2">Ruby on Rails</span>
+                <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Built with</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:10px;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#e0982b">
+            <span style="width:1px;height:10px;background:#e0982b"></span><span style="flex:1;height:1px;background:#e0982b"></span><span>1M+ responses · 5,000+ pages</span><span style="flex:1;height:1px;background:#e0982b"></span><span style="width:1px;height:10px;background:#e0982b"></span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">03 · National justice data</div>
+          <h3 style="margin:10px 0 0;font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;color:#f6efe2">NIJIS</h3>
+          <div style="margin-top:24px;display:flex;flex-direction:column;border-top:2px solid #4a3824">
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e0982b;padding-top:3px">Brief</span><span style="font-size:15px;line-height:1.55;color:#f3ebdd">The National Integrated Justice Information System: turn a national survey into usable reporting.</span></div>
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e0982b;padding-top:3px">Structure</span><span style="font-size:15px;line-height:1.55;color:#f3ebdd">A Ruby on Rails application, built under my lead.</span></div>
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3a2c1c"><span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e0982b;padding-top:3px">Result</span><span style="font-size:15px;line-height:1.55;color:#f3ebdd">Over a million responses analyzed into 5,000+ pages of reporting.</span></div>
+          </div>
+          <div style="margin-top:16px;font-size:13px;color:#b6a58e">Ruby on Rails · Data systems · Reporting</div>
+        </div>
+      </article>
+    </div>
+
+    <div style="margin-top:88px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:12px;border-bottom:2px solid #4a3824">
+        <h3 style="margin:0;font-size:20px;font-weight:700;color:#f6efe2">Further work</h3>
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Schedule of projects</span>
+      </div>
+      <sc-for list="{{ moreWork }}" as="p" hint-placeholder-count="9">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px 24px;padding:16px 0;border-bottom:1px solid #3a2c1c;align-items:baseline">
+          <span style="font-size:16px;font-weight:700;color:#f6efe2">{{ p.name }}</span>
+          <span style="font-size:14px;line-height:1.5;color:#b6a58e;grid-column:span 2">{{ p.desc }}</span>
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#e0982b">{{ p.metric }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="community" data-screen-label="Community" style="border-bottom:2px solid #4a3824;background:#e0982b;color:#1b1109">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,48px)">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;padding-bottom:18px;border-bottom:2px solid #1b1109;margin-bottom:48px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase">04 — Community</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Sheet A-04</div>
+    </div>
+    <h2 style="margin:0;max-width:960px;font-size:clamp(34px,5vw,64px);font-weight:800;letter-spacing:-0.025em;line-height:1.02;text-wrap:balance">Together with Ethiopia's Drupal developers, we're growing a local community and helping new engineers find their footing.</h2>
+
+    <div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));border:2px solid #1b1109">
+      <div style="padding:28px;border-right:2px solid #1b1109;display:flex;flex-direction:column;gap:14px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Organize</div>
+        <div style="font-size:24px;font-weight:800;letter-spacing:-0.01em;line-height:1.1">Ethiopian Drupal Group</div>
+        <p style="margin:0;font-size:15px;line-height:1.55">Helped bring Ethiopia's Drupal developers together as a group on Drupal.org, and co-organized Global Contribution Weekend, Ethiopia, 2023.</p>
+      </div>
+      <div style="padding:28px;border-right:2px solid #1b1109;display:flex;flex-direction:column;gap:14px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Translate</div>
+        <div style="font-size:24px;font-weight:800;letter-spacing:-0.01em;line-height:1.1">Drupal in Amharic</div>
+        <p style="margin:0;font-size:15px;line-height:1.55">Coordinating contributors on Drupal's Amharic localization, opening the platform to Amharic-speaking users.</p>
+      </div>
+      <div style="padding:28px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Mentor</div>
+        <div style="font-size:24px;font-weight:800;letter-spacing:-0.01em;line-height:1.1">Women in Tech · Orange Hub</div>
+        <p style="margin:0;font-size:15px;line-height:1.55">Trained young women in Node.js backend engineering under IFC's Women in Tech program in Addis Ababa. Designed Drupal onboarding for graduates at Orange Innovation Hub, Dakar.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;align-items:stretch">
+      <div style="position:relative;min-height:260px;border:2px solid #1b1109;filter:{{ photoFilter }}">
+        <image-slot id="community-photo" shape="rect" placeholder="Photo: community meetup or training session"></image-slot>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:flex-end;border-top:2px solid #1b1109">
+        <div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #1b1109"><span style="font-weight:800">2026</span><span style="font-size:15px">Volunteer, DrupalCon Chicago</span></div>
+        <div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #1b1109"><span style="font-weight:800">2025</span><span style="font-size:15px">Volunteer, DrupalCon Vienna</span></div>
+        <div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #1b1109"><span style="font-weight:800">2023</span><span style="font-size:15px">Organizer, Global Contribution Weekend, Ethiopia</span></div>
+        <div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #1b1109"><span style="font-weight:800">2018</span><span style="font-size:15px">Speaker, Drupal Europe</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Photo — Pointe des Almadies" style="border-bottom:2px solid #4a3824">
+  <div style="position:relative;height:clamp(240px,34vw,460px);filter:{{ photoFilter }}">
+    <image-slot id="addis-3" shape="rect" placeholder="Photo 3: Pointe des Almadies, Dakar"></image-slot>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:12px clamp(20px,4vw,48px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">
+    <span>Pointe des Almadies, Dakar, Senegal</span><span>Westernmost point of mainland Africa</span>
+  </div>
+</section>
+
+<section id="skills" data-screen-label="Skills" style="border-bottom:2px solid #4a3824">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,48px)">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;padding-bottom:18px;border-bottom:2px solid #4a3824;margin-bottom:48px">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#e0982b">05 — Skills</div>
+        <h2 style="margin:10px 0 0;font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;color:#f6efe2">Skills, and the projects that used them.</h2>
+      </div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Sheet A-05</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:40px 32px">
+      <sc-for list="{{ skillGroups }}" as="g" hint-placeholder-count="4">
+        <div>
+          <div style="padding-bottom:10px;border-bottom:2px solid #e0982b;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#e0982b">{{ g.title }}</div>
+          <sc-for list="{{ g.items }}" as="s" hint-placeholder-count="5">
+            <div style="padding:12px 0;border-bottom:1px solid #3a2c1c;display:flex;flex-direction:column;gap:3px">
+              <span style="font-size:15px;font-weight:600;color:#f6efe2">{{ s.name }}</span>
+              <span style="font-size:12px;line-height:1.45;color:#b6a58e">{{ s.used }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="experience" data-screen-label="Experience" style="border-bottom:2px solid #4a3824">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,48px)">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;padding-bottom:18px;border-bottom:2px solid #4a3824;margin-bottom:24px">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#e0982b">06 — Experience</div>
+        <h2 style="margin:10px 0 0;font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;color:#f6efe2">One thread, branching wide.</h2>
+      </div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">Sheet A-06</div>
+    </div>
+    <sc-for list="{{ experience }}" as="e" hint-placeholder-count="7">
+      <div style="position:relative;display:grid;grid-template-columns:{{ tlCols }};gap:{{ tlGap }};padding:26px 0;border-bottom:1px solid #3a2c1c">
+        <div style="font-size:13px;font-weight:600;color:#e0982b;padding-top:5px">{{ e.date }}</div>
+        <div style="position:relative;padding-left:{{ tlPad }};border-left:2px solid #4a3824">
+          <span style="position:absolute;left:-7px;top:8px;width:12px;height:12px;background:#e0982b"></span>
+          <div style="font-size:20px;font-weight:700;color:#f6efe2">{{ e.role }}</div>
+          <div style="margin-top:4px;font-size:14px;font-weight:600;color:#f0ac45">{{ e.org }}</div>
+          <div style="margin-top:10px;font-size:15px;line-height:1.6;color:#b6a58e;max-width:640px">{{ e.desc }}</div>
+        </div>
+      </div>
+    </sc-for>
+
+    <div style="margin-top:72px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:12px;border-bottom:2px solid #4a3824">
+      <h3 style="margin:0;font-size:20px;font-weight:700;color:#f6efe2">Education &amp; certification</h3>
+    </div>
+    <sc-for list="{{ education }}" as="e" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:{{ tlCols }};gap:{{ tlGap }};padding:18px 0;border-bottom:1px solid #3a2c1c">
+        <div style="font-size:13px;font-weight:600;color:#e0982b;padding-top:3px">{{ e.date }}</div>
+        <div style="padding-left:{{ tlPad }};border-left:2px solid #4a3824">
+          <div style="font-size:17px;font-weight:700;color:#f6efe2">{{ e.role }}</div>
+          <div style="margin-top:2px;font-size:14px;color:#b6a58e">{{ e.org }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Photo — Addis Ababa" style="border-bottom:2px solid #4a3824">
+  <div style="position:relative;height:clamp(240px,34vw,460px);filter:{{ photoFilter }}">
+    <image-slot id="addis-4" shape="rect" placeholder="Photo 4: Addis Ababa at dusk or night"></image-slot>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:12px clamp(20px,4vw,48px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#b6a58e">
+    <span>Addis Ababa</span><span>After hours</span>
+  </div>
+</section>
+
+<footer id="contact" data-screen-label="Contact" style="background:#2a1b10">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,48px) 0">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#e0982b">07 — Contact</div>
+    <h2 style="margin:14px 0 0;max-width:760px;font-size:clamp(32px,4.6vw,56px);font-weight:800;letter-spacing:-0.025em;line-height:1.04;color:#f6efe2;text-wrap:balance">Architecting something in Drupal, cloud, or the open web? <span style="color:#e0982b">Let's talk.</span></h2>
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));border-top:2px solid #4a3824;border-left:1px solid #3a2c1c">
+      <sc-for list="{{ links }}" as="l" hint-placeholder-count="6">
+        <a href="{{ l.href }}" target="_blank" rel="noopener" style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:22px 24px;border-right:1px solid #3a2c1c;border-bottom:1px solid #3a2c1c;color:#f6efe2" style-hover="background:#33220f;color:#f6efe2">
+          <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+            <span style="font-size:16px;font-weight:700">{{ l.title }}</span>
+            <span style="font-size:13px;color:#b6a58e;overflow-wrap:anywhere">{{ l.sub }}</span>
+          </span>
+          <span style="color:#e0982b;font-size:18px">→</span>
+        </a>
+      </sc-for>
+    </div>
+    <div style="margin-top:56px;padding:28px 0;border-top:2px solid #4a3824;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:12px;color:#b6a58e">
+      <span style="display:flex;align-items:center;gap:10px"><img src="assets/tsega-logo.svg" alt="ፀጋ" style="height:28px;width:auto;display:block">© 2026 Tsegaselassie Tadesse</span>
+      <span style="letter-spacing:0.12em;text-transform:uppercase;font-weight:600">Addis Ababa, Ethiopia · Sheet 8 of 8</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showGrid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Blueprint&quot;},&quot;photoTreatment&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Original&quot;,&quot;Warm&quot;,&quot;Black &amp; white&quot;],&quot;default&quot;:&quot;Original&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photography&quot;}}">
+class Component extends DCLogic {
+  state = { mobile: typeof window !== 'undefined' && window.innerWidth < 760, menuOpen: false };
+  componentDidMount() {
+    this.onResize = () => {
+      const mobile = window.innerWidth < 760;
+      if (mobile !== this.state.mobile) this.setState({ mobile, menuOpen: false });
+    };
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+  navVals() {
+    const { mobile, menuOpen } = this.state;
+    return {
+      isDesktop: !mobile, isMobile: mobile, menuOpen, showMobileMenu: mobile && menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      bar1: menuOpen ? 'translateY(7px) rotate(45deg)' : 'none',
+      bar2: menuOpen ? 0 : 1,
+      tlCols: mobile ? 'minmax(0,1fr)' : 'minmax(120px,180px) minmax(0,1fr)',
+      tlGap: mobile ? '10px' : '8px 40px',
+      tlPad: mobile ? '20px' : '28px',
+      bar3: menuOpen ? 'translateY(-7px) rotate(-45deg)' : 'none'
+    };
+  }
+  renderVals() {
+    const mode = this.props.photoTreatment ?? 'Original';
+    const photoFilter = mode === 'Black & white' ? 'grayscale(1) contrast(1.05)' : mode === 'Warm' ? 'sepia(0.35) saturate(0.85)' : 'none';
+    return {
+      ...this.navVals(),
+      showGrid: this.props.showGrid ?? true,
+      photoFilter,
+      moreWork: [
+        { name: 'Melco Resort Websites', desc: 'Five static resort sites rebuilt as Angular apps on one decoupled Drupal 8 backend with a shared design system.', metric: '5 sites, 1 backend' },
+        { name: 'paigo.com', desc: 'Progressively decoupled Drupal 8 + React; shared UI components in PatternLab and API-driven form flows.', metric: 'Decoupled, multilingual' },
+        { name: 'UK Hydrographic Office', desc: 'Drupal 7 Opigno LMS migrated to Drupal 8 with a new custom theme and ported e-commerce.', metric: 'LMS + e-commerce' },
+        { name: "L'Oréal Finance", desc: 'Legacy ASP.NET application migrated to Drupal 8, with third-party API integrations.', metric: 'System migration' },
+        { name: 'Bayer Pet Portal', desc: 'Primary frontend developer: responsive Drupal 8 theme with consistent design-system artifacts.', metric: 'Drupal 8 theming' },
+        { name: 'DAGRIS', desc: 'Domestic Animal Genetic Resources Information System, a Drupal 7 + D3.js data platform for ILRI.', metric: '100,000s of records' },
+        { name: 'CGSpace ↔ ContentDM Bridge', desc: 'Meteor.js bridge letting two research institutes share published content between repositories.', metric: 'github.com/ilri' },
+        { name: 'restaculous', desc: 'Opinionated CLI that generates a REST API app from scratch, integration tests included.', metric: 'npm package' },
+        { name: 'Excel Importer', desc: 'Maintained Drupal module importing structured Excel data into content, built for CIMMYT SRA.', metric: 'Drupal module' }
+      ],
+      skillGroups: [
+        { title: 'Architecture', items: [
+          { name: 'Systems architecture', used: 'Symphony3 White Label, Cyber ERP' },
+          { name: 'API design & integration', used: 'paigo.com, L\'Oréal Finance, Big Blue Door' },
+          { name: 'Decoupled CMS', used: 'Melco Resorts, paigo.com' },
+          { name: 'Data migration', used: 'UK Hydrographic Office, DAGRIS' },
+          { name: 'Team building & delegation', used: 'Cybersoft (CTO), CIMMYT' }
+        ]},
+        { title: 'Languages & frameworks', items: [
+          { name: 'PHP · Symfony · Drupal', used: 'Big Blue Door, Symphony3, 2× Acquia' },
+          { name: 'Node.js', used: 'restaculous, Women in Tech curriculum' },
+          { name: 'React · Vue · Angular', used: 'paigo.com, Melco Resorts' },
+          { name: 'Ruby on Rails', used: 'NIJIS' },
+          { name: 'C# · ASP.NET MVC', used: 'Cyber ERP' },
+          { name: 'Meteor.js', used: 'CGSpace ↔ ContentDM Bridge' }
+        ]},
+        { title: 'Data', items: [
+          { name: 'MySQL · PostgreSQL', used: 'Drupal platforms throughout' },
+          { name: 'SQL Server', used: 'Cyber ERP' },
+          { name: 'MongoDB', used: 'Women in Tech curriculum' },
+          { name: 'Apache Solr', used: 'Big Blue Door' },
+          { name: 'D3.js · GeoNode', used: 'DAGRIS, CIMMYT decision-support tool' },
+          { name: 'Neo4j', used: 'Current interest: graph databases' }
+        ]},
+        { title: 'Infrastructure', items: [
+          { name: 'Docker · Kubernetes', used: 'Symphony3 White Label' },
+          { name: 'CI/CD pipelines', used: 'Symphony3, Big Blue Door' },
+          { name: 'AWS · OpenShift', used: 'Cloud deployments' },
+          { name: 'Prometheus · Grafana', used: 'Monitoring' },
+          { name: 'Linux administration', used: 'ILRI' }
+        ]}
+      ],
+      experience: [
+        { date: 'Feb 2025 →', role: 'Senior Software Engineer', org: 'Big Blue Door — London, UK (Remote)', desc: 'Custom Drupal modules with PHP and Symfony components, complex data migrations, and accessible Twig/SCSS/JS front ends. Owns web service integrations (REST/JSON, Apache Solr) and CI/CD-driven maintenance.' },
+        { date: 'Aug 2021 → Jan 2025', role: 'Senior Technical Consultant — Drupal, Integration & GIS', org: 'Symphony3 — Melbourne, Australia (Remote)', desc: "Architected systems integrations and rebuilt the company's flagship product as a cloud-native, Kubernetes-deployed application. Delivered 20+ client projects and mentored the wider engineering team on DevOps practice." },
+        { date: 'Dec 2019 → Present', role: 'Web Systems Consultant', org: "CIMMYT (Int'l Maize & Wheat Improvement Center) — Texcoco, Mexico (Remote)", desc: "Leads a distributed team building the center's Learning Management System, and built a crop-production decision-support tool on GeoNode, an open-source geospatial CMS. Ongoing alongside other roles." },
+        { date: 'Jan 2018 → Jul 2021', role: 'Frontend Developer', org: 'Axelerant — Atlanta, USA (Remote)', desc: 'Owned UI/UX for internal and client-facing web projects, from wireframes to responsive builds. Represented the company in the Drupal community — organizing meetups, speaking internationally, contributing code and translations.' },
+        { date: 'May 2017 → May 2018', role: 'Senior Drupal Developer (Consultant)', org: 'University of the Arts London — London, UK (Remote)', desc: 'Technical lead for the Institute for Conservation of Historic and Artistic Works, overseeing TDD/BDD-tested development across the IIC and Ligatus web platforms.' },
+        { date: 'Dec 2015 → Dec 2017', role: 'Web Systems Specialist', org: 'International Livestock Research Institute — Addis Ababa, Ethiopia', desc: "Managed Linux infrastructure and led Drupal/WordPress platforms for the institute's Communication & Knowledge Management department, including the CGSpace document repository." },
+        { date: 'May 2008 → Nov 2015', role: 'Chief Technology Officer', org: 'Cybersoft p.l.c — Addis Ababa, Ethiopia', desc: 'Grew from Software Engineer to Team Lead to CTO over seven years — steering technical direction, product portfolio, and client relationships while guiding delivery across the full SDLC.' }
+      ],
+      education: [
+        { date: 'Oct 2019', role: 'Acquia Certified Frontend Specialist — Drupal 8', org: 'Acquia' },
+        { date: 'May 2017', role: 'Acquia Certified Site Builder — Drupal 7', org: 'Acquia' },
+        { date: 'Apr 2017', role: 'Web Backend Application Engineering — Node.js', org: 'Gebeya Academy' },
+        { date: 'Jul 2005', role: 'B.Sc. Computer Science', org: 'Addis Ababa University' }
+      ],
+      links: [
+        { title: 'Email', sub: 'tsegaselassi@gmail.com', href: 'mailto:tsegaselassi@gmail.com' },
+        { title: 'LinkedIn', sub: 'linkedin.com/in/tsegaselassie', href: 'https://www.linkedin.com/in/tsegaselassie/' },
+        { title: 'GitHub', sub: 'github.com/tsega', href: 'https://github.com/tsega' },
+        { title: 'Drupal.org', sub: 'drupal.org/u/tsega', href: 'https://www.drupal.org/u/tsega' },
+        { title: 'GitLab', sub: 'gitlab.com/tsega', href: 'https://gitlab.com/tsega' },
+        { title: 'X / Twitter', sub: '@tsegat', href: 'https://twitter.com/tsegat' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
