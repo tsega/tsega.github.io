@@ -6,6 +6,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
+      title: 'Tsegaselassie Tadesse — Senior Software Architect',
       link: [
         {
           rel: 'icon',
@@ -40,5 +44,17 @@ export default defineNuxtConfig({
         commaDangle: 'never'
       }
     }
+  },
+  fonts: {
+    families: [
+      {
+        name: 'Archivo',
+        weights: [400, 500, 600, 700, 800]
+      },
+      {
+        name: 'Pinyon Script',
+        weights: [400]
+      }
+    ]
   }
 });

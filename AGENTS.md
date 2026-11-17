@@ -13,7 +13,7 @@ Work is tracked as GitHub issues in [`tsega/tsega.github.io`](https://github.com
 - Nuxt 4 (Vue) and TypeScript, generated as a static site (`nitro.preset: 'static'`)
 - Nuxt Content 3 for blog posts and homepage data
 - Tailwind CSS 4 with `@tailwindcss/typography`; design tokens live in `app/assets/css/main.css`
-- `@nuxt/fonts` to self-host fonts at build time (Fraunces, Karla, JetBrains Mono, Pinyon Script)
+- `@nuxt/fonts` to self-host fonts at build time (Archivo, Pinyon Script)
 - Bun as runtime, package manager and script runner
 - GitHub Pages for hosting, deployed by `.github/workflows/deploy.yml`
 
