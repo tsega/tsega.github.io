@@ -1,0 +1,15 @@
+# "Education & certification", shown under the experience timeline.
+heading: Education & certification
+items:
+  - date: Oct 2019
+    role: Acquia Certified Frontend Specialist — Drupal 8
+    org: Acquia
+  - date: May 2017
+    role: Acquia Certified Site Builder — Drupal 7
+    org: Acquia
+  - date: Apr 2017
+    role: Web Backend Application Engineering — Node.js
+    org: Gebeya Academy
+  - date: Jul 2005
+    role: B.Sc. Computer Science
+    org: Addis Ababa University

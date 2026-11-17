@@ -1,0 +1,54 @@
+# Skills section: each skill names the projects that used it.
+groups:
+  - title: Architecture
+    items:
+      - name: Systems architecture
+        used: Symphony3 White Label, Cyber ERP
+      - name: API design & integration
+        used: paigo.com, L'Oréal Finance, Big Blue Door
+      - name: Decoupled CMS
+        used: Melco Resorts, paigo.com
+      - name: Data migration
+        used: UK Hydrographic Office, DAGRIS
+      - name: Team building & delegation
+        used: Cybersoft (CTO), CIMMYT
+  - title: Languages & frameworks
+    items:
+      - name: PHP · Symfony · Drupal
+        used: Big Blue Door, Symphony3, 2× Acquia
+      - name: Node.js
+        used: restaculous, Women in Tech curriculum
+      - name: React · Vue · Angular
+        used: paigo.com, Melco Resorts
+      - name: Ruby on Rails
+        used: NIJIS
+      - name: C# · ASP.NET MVC
+        used: Cyber ERP
+      - name: Meteor.js
+        used: CGSpace ↔ ContentDM Bridge
+  - title: Data
+    items:
+      - name: MySQL · PostgreSQL
+        used: Drupal platforms throughout
+      - name: SQL Server
+        used: Cyber ERP
+      - name: MongoDB
+        used: Women in Tech curriculum
+      - name: Apache Solr
+        used: Big Blue Door
+      - name: D3.js · GeoNode
+        used: DAGRIS, CIMMYT decision-support tool
+      - name: Neo4j
+        used: 'Current interest: graph databases'
+  - title: Infrastructure
+    items:
+      - name: Docker · Kubernetes
+        used: Symphony3 White Label
+      - name: CI/CD pipelines
+        used: Symphony3, Big Blue Door
+      - name: AWS · OpenShift
+        used: Cloud deployments
+      - name: Prometheus · Grafana
+        used: Monitoring
+      - name: Linux administration
+        used: ILRI

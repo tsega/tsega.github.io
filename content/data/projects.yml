@@ -1,0 +1,68 @@
+# Work section: three flagship systems and the "Further work" schedule.
+# `logo` names the technology mark that #8 self-hosts.
+flagship:
+  - number: '01'
+    context: Symphony3, 2021–2025
+    title: Symphony3 White Label
+    tech:
+      name: Drupal
+      logo: drupal
+    metric: 20+ client rollouts
+    brief: Rebuild the company's flagship product for Australian local government.
+    structure: Cloud-native on Twelve-Factor principles, deployed to Kubernetes, with a fully documented design system.
+    result: One platform carried 20+ client projects; the wider team was mentored on DevOps practice.
+    stack: [Drupal, Kubernetes, Docker, CI/CD, Design systems]
+  - number: '02'
+    context: Cybersoft, Addis Ababa
+    title: Cyber ERP
+    tech:
+      name: ASP.NET MVC
+      logo: dotnet
+    metric: 12 subsystems · 12 institutions
+    brief: An enterprise resource planning suite for Ethiopian public and private institutions.
+    structure: Twelve subsystems architected on ASP.NET MVC and SQL Server.
+    result: Deployed across a dozen institutions.
+    stack: [C#, ASP.NET MVC, SQL Server, System design]
+  - number: '03'
+    context: National justice data
+    title: NIJIS
+    tech:
+      name: Ruby on Rails
+      logo: rubyonrails
+    metric: 1M+ responses · 5,000+ pages
+    brief: 'The National Integrated Justice Information System: turn a national survey into usable reporting.'
+    structure: A Ruby on Rails application, built under my lead.
+    result: Over a million responses analyzed into 5,000+ pages of reporting.
+    stack: [Ruby on Rails, Data systems, Reporting]
+
+furtherWork:
+  heading: Further work
+  label: Schedule of projects
+  items:
+    - name: Melco Resort Websites
+      desc: Five static resort sites rebuilt as Angular apps on one decoupled Drupal 8 backend with a shared design system.
+      metric: 5 sites, 1 backend
+    - name: paigo.com
+      desc: Progressively decoupled Drupal 8 + React; shared UI components in PatternLab and API-driven form flows.
+      metric: Decoupled, multilingual
+    - name: UK Hydrographic Office
+      desc: Drupal 7 Opigno LMS migrated to Drupal 8 with a new custom theme and ported e-commerce.
+      metric: LMS + e-commerce
+    - name: L'Oréal Finance
+      desc: Legacy ASP.NET application migrated to Drupal 8, with third-party API integrations.
+      metric: System migration
+    - name: Bayer Pet Portal
+      desc: 'Primary frontend developer: responsive Drupal 8 theme with consistent design-system artifacts.'
+      metric: Drupal 8 theming
+    - name: DAGRIS
+      desc: Domestic Animal Genetic Resources Information System, a Drupal 7 + D3.js data platform for ILRI.
+      metric: 100,000s of records
+    - name: CGSpace ↔ ContentDM Bridge
+      desc: Meteor.js bridge letting two research institutes share published content between repositories.
+      metric: github.com/ilri
+    - name: restaculous
+      desc: Opinionated CLI that generates a REST API app from scratch, integration tests included.
+      metric: npm package
+    - name: Excel Importer
+      desc: Maintained Drupal module importing structured Excel data into content, built for CIMMYT SRA.
+      metric: Drupal module
