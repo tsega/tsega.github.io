@@ -1,0 +1,21 @@
+# Site-wide copy: header navigation and the contact footer.
+name: Tsega Tadesse
+fullName: Tsegaselassie Tadesse
+logoAlt: ፀጋ
+nav:
+  - label: About
+    href: /#about
+  - label: Writing
+    href: /#writing
+  - label: Work
+    href: /#work
+  - label: Community
+    href: /#community
+contact:
+  label: Contact
+  href: /#contact
+  eyebrow: 07 — Contact
+  heading: Architecting something in Drupal, cloud, or the open web?
+  highlight: Let's talk.
+  place: Addis Ababa, Ethiopia
+  sheet: Sheet 8 of 8

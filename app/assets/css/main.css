@@ -2,71 +2,96 @@
 @plugin "@tailwindcss/typography";
 
 /*
- * Default ("espresso") theme — source palette:
- *   --color-bg                #1b1109  espresso
- *   --color-bg-elevated       #2a1b10  roast
- *   --color-bg-elevated-2     #3a2716  roast-2
- *   --color-text              #f3ebdd  text
- *   --color-text-muted        #b6a58e  text-muted
- *   --color-heading           #f6efe2  cream
- *   --color-border            #3a2c1c  border
- *   --color-accent            #e0982b  gold
- *   --color-accent-bright     #f0ac45  gold-bright
- *   --color-accent-secondary  #1f3b2c  forest
- *   --color-accent-secondary-bright #3d7a5a  forest-bright
+ * Design tokens from design/portfolio/index.dc.html. Components use them
+ * through utilities (bg-bg, text-text-muted, border-border, text-accent...),
+ * never as hex values.
  */
 @theme {
+  /* The design's single layout breakpoint (760px). */
+  --breakpoint-md: 47.5rem;
+
+  /* Surfaces */
   --color-bg: #1b1109;
   --color-bg-elevated: #2a1b10;
-  --color-bg-elevated-2: #3a2716;
+  --color-bg-sunken: #221509;
+  --color-bg-hover: #33220f;
+
+  /* Text */
   --color-text: #f3ebdd;
-  --color-text-muted: #b6a58e;
   --color-heading: #f6efe2;
-  --color-border: #3a2c1c;
+  --color-text-muted: #b6a58e;
+
+  /* Rules: 2px section dividers, strong card borders, 1px row rules */
+  --color-border: #4a3824;
+  --color-border-strong: #5a4329;
+  --color-border-subtle: #3a2c1c;
+
+  /* Gold accent: default, hover and pressed */
   --color-accent: #e0982b;
   --color-accent-bright: #f0ac45;
-  --color-accent-secondary: #1f3b2c;
-  --color-accent-secondary-bright: #3d7a5a;
+  --color-accent-pressed: #c77f18;
 
-  --font-display: "Fraunces", serif;
-  --font-body: "Karla", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Archivo", system-ui, sans-serif;
   --font-script: "Pinyon Script", cursive;
 }
 
 /*
- * "Forest" theme — used by the footer/contact and blog-CTA sections in the
- * original design. Scope it to any wrapper via data-theme="forest" and every
- * Tailwind utility built on these tokens (bg-bg, text-text-muted, etc.)
- * picks up the override automatically.
- *   --color-bg                #142a1e
- *   --color-bg-elevated       #1a3226
- *   --color-bg-elevated-2     #20402f
- *   --color-border            #2d4a37
- *   --color-text              #f0f5ee
- *   --color-text-muted        #8aa696
+ * Forest palette, used by the Writing section. Add data-theme="forest" to a
+ * wrapper and every utility built on these tokens switches inside it.
  */
 [data-theme="forest"] {
-  --color-bg: #142a1e;
-  --color-bg-elevated: #1a3226;
-  --color-bg-elevated-2: #20402f;
-  --color-border: #2d4a37;
-  --color-text: #f0f5ee;
-  --color-text-muted: #8aa696;
+  --color-bg: #1f3a2b;
+  --color-bg-elevated: #1b3828;
+  --color-bg-sunken: #173022;
+  --color-bg-hover: #2a4a37;
+  --color-text-muted: #bccbb8;
+  --color-border: #3f6450;
+  --color-border-strong: #3f6450;
+  --color-border-subtle: #33553f;
 }
 
-body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-body);
+@layer base {
+  /* Keep anchor targets clear of the 64px sticky header. */
+  html {
+    scroll-padding-top: 4rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: var(--color-accent-bright);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-heading);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-::selection {
-  background: var(--color-accent);
-  color: var(--color-bg);
+/* Content column: 1200px wide with the design's fluid side gutters. */
+@utility page-width {
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
 }

@@ -5,7 +5,7 @@ Personal portfolio and blog of Tsegaselassie Tadesse, built as a fully static si
 - **Framework:** [Nuxt 4](https://nuxt.com) with static generation (`nitro.preset: 'static'`)
 - **Content:** [Nuxt Content 3](https://content.nuxt.com) — Markdown blog posts in `content/`
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com) + `@tailwindcss/typography`
-- **Fonts:** self-hosted at build time by `@nuxt/fonts` (Fraunces, Karla, JetBrains Mono, Pinyon Script)
+- **Fonts:** self-hosted at build time by `@nuxt/fonts` (Archivo, Pinyon Script)
 - **Package manager / runtime:** [Bun](https://bun.sh)
 
 ## Getting started
@@ -28,9 +28,12 @@ bun run dev        # http://localhost:3000
 ```
 app/
   app.vue              # root component
+  components/          # AppHeader, AppFooter and shared pieces (SectionHead, ...)
+  layouts/default.vue  # header, main and footer around every page
   assets/css/main.css  # Tailwind entry + design tokens (@theme)
 content/
   blog/*.md            # blog posts
+  data/*.yml           # homepage and site copy (nav, contact links, ...)
 content.config.ts      # content collections + frontmatter schema
 design/
   portfolio/           # reference design from Claude Design — source of truth for the UI port
@@ -43,9 +46,14 @@ The palette from the reference design lives in `app/assets/css/main.css` as Tail
 theme variables, so utilities like `bg-bg`, `text-text-muted`, `border-border` and
 `text-accent` work everywhere.
 
-- **Espresso** (default): dark roast backgrounds, cream text, gold accent.
-- **Forest**: add `data-theme="forest"` to any wrapper to switch it to the green palette
-  used by the contact footer and blog call-to-action.
+- **Espresso** (default): dark roast surfaces (`bg`, `bg-elevated`, `bg-sunken`,
+  `bg-hover`), cream text (`text`, `heading`, `text-muted`), three rule weights
+  (`border` for 2px dividers, `border-strong`, `border-subtle` for 1px rows) and the gold
+  accent (`accent`, `accent-bright` on hover, `accent-pressed`).
+- **Forest**: add `data-theme="forest"` to a wrapper to switch it to the green palette
+  used by the Writing section.
+- `md:` is the design's single breakpoint, 760px. `page-width` gives the 1200px content
+  column with its fluid side gutters.
 
 ## Adding images
 
