@@ -1,0 +1,30 @@
+# Section heads: the gold eyebrow, the h2 and the "Sheet" label on the right.
+# Community sets its h2 in community.yml, below the rule.
+about:
+  eyebrow: 01 — About
+  heading: Architect, engineer, organizer.
+  sheet: Sheet A-01
+writing:
+  eyebrow: 02 — Writing
+  heading: Notes from the drawing board.
+  sheet: Sheet A-02
+  readMore: Read the post
+  subscribe:
+    text: New posts by email
+    label: Subscribe
+    href: mailto:tsegaselassi@gmail.com?subject=Subscribe%20to%20posts
+work:
+  eyebrow: 03 — Work
+  heading: Systems, not just sites.
+  sheet: Sheet A-03
+community:
+  eyebrow: 04 — Community
+  sheet: Sheet A-04
+skills:
+  eyebrow: 05 — Skills
+  heading: Skills, and the projects that used them.
+  sheet: Sheet A-05
+experience:
+  eyebrow: 06 — Experience
+  heading: One thread, branching wide.
+  sheet: Sheet A-06

@@ -1,0 +1,25 @@
+# Community section: statement, three cards, photo and timeline.
+statement: Together with Ethiopia's Drupal developers, we're growing a local community and helping new engineers find their footing.
+cards:
+  - kicker: Organize
+    title: Ethiopian Drupal Group
+    text: Helped bring Ethiopia's Drupal developers together as a group on Drupal.org, and co-organized Global Contribution Weekend, Ethiopia, 2023.
+  - kicker: Translate
+    title: Drupal in Amharic
+    text: Coordinating contributors on Drupal's Amharic localization, opening the platform to Amharic-speaking users.
+  - kicker: Mentor
+    title: Women in Tech · Orange Hub
+    text: Trained young women in Node.js backend engineering under IFC's Women in Tech program in Addis Ababa. Designed Drupal onboarding for graduates at Orange Innovation Hub, Dakar.
+photo:
+  image: community-training
+  widths: [480, 768, 1080]
+  alt: Tsega taking a group selfie with five participants in a training room
+timeline:
+  - year: '2026'
+    text: Volunteer, DrupalCon Chicago
+  - year: '2025'
+    text: Volunteer, DrupalCon Vienna
+  - year: '2023'
+    text: Organizer, Global Contribution Weekend, Ethiopia
+  - year: '2018'
+    text: Speaker, Drupal Europe

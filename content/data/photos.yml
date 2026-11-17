@@ -1,0 +1,30 @@
+# The four full-width photo bands, in page order. `image` is the base name
+# from `bun run image`; a value ending in .svg is a placeholder file.
+bands:
+  - id: addis
+    image: band-acacia
+    widths: [768, 960]
+    alt: An acacia tree in open savanna, with antelope grazing behind it
+    caption:
+      - 'Site: Addis Ababa, Ethiopia'
+      - 9.03° N, 38.74° E
+  - id: babogaya
+    image: band-babogaya-lake
+    widths: [768, 1280, 1900]
+    alt: Babogaya crater lake from a wooded rim, with a small boat on the water
+    caption:
+      - Babogaya Lake, Debre Zeit (Bishoftu), Ethiopia
+      - One of five crater lakes in the Bishoftu area
+  - id: almadies
+    image: band-almadies
+    widths: [768, 1280, 1920, 2560]
+    alt: Waves breaking over a rocky shore under an overcast sky, with a tower on the horizon
+    caption:
+      - Pointe des Almadies, Dakar, Senegal
+      - Westernmost point of mainland Africa
+  - id: after-hours
+    image: banner-city-placeholder.svg
+    alt: ''
+    caption:
+      - Addis Ababa
+      - After hours

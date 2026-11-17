@@ -1,0 +1,61 @@
+# Hero, stats band and About section. Copied word for word from
+# design/portfolio/index.dc.html; accuracy fixes are tracked in #17.
+hero:
+  code: A-00
+  role: Senior Software Architect
+  name: Tsegaselassie Tadesse
+  motto: [Think, Build, Release]
+  sub: I work through hard problems, design the systems that solve them, and ship them into the real world.
+  primary:
+    label: View flagship systems
+    href: /#work
+  secondary:
+    label: or get in touch
+    href: /#contact
+  card:
+    - label: Location
+      value: Addis Ababa · remote worldwide
+    - label: Open to
+      value: Enterprise architecture · Intelligent systems
+    - label: Contact
+      value: tsegaselassi@gmail.com
+      href: mailto:tsegaselassi@gmail.com
+
+stats:
+  - value: 20+
+    label: Years in software
+  - value: 7 yrs
+    label: As CTO, Cybersoft
+  - value: '5'
+    label: Global enterprise brands
+  - value: 200+
+    label: Projects delivered, small to enterprise
+
+about:
+  intro: I design systems, then lead the teams that build them. For two decades that has meant shaping platforms, integrations and infrastructure for organizations across Africa, Europe, Australia and the Americas, choosing the tools to fit the problem.
+  facts:
+    - label: Led
+      value: 'Cybersoft, Addis Ababa: engineer to CTO over seven years'
+    - label: Consulted
+      value: Symphony3 (Melbourne), CIMMYT, University of the Arts London
+    - label: Shipped for
+      value: L'Oréal, Bayer, UK Hydrographic Office, Melco Resorts
+    - label: Exploring
+      value: Intelligent systems, enterprise platforms, graph databases
+  highlights:
+    - value: 7 years
+      title: Chief Technology Officer
+      detail: Cybersoft p.l.c, 2008–2015
+    - value: 1M+
+      title: Survey records analyzed
+      detail: National Integrated Justice Information System
+    - value: 2×
+      title: Acquia certified
+      detail: Frontend Specialist D8 · Site Builder D7
+  headshot:
+    image: tsega-headshot
+    widths: [320, 480, 640]
+    alt: Black-and-white portrait of Tsegaselassie Tadesse
+    caption:
+      - Addis Ababa, ET
+      - B.Sc. CS, 2005

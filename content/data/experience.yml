@@ -1,0 +1,30 @@
+# Experience timeline, in the design's order. `date` is display text.
+items:
+  - date: Feb 2025 →
+    role: Senior Software Engineer
+    org: Big Blue Door — London, UK (Remote)
+    desc: Custom Drupal modules with PHP and Symfony components, complex data migrations, and accessible Twig/SCSS/JS front ends. Owns web service integrations (REST/JSON, Apache Solr) and CI/CD-driven maintenance.
+  - date: Aug 2021 → Jan 2025
+    role: Senior Technical Consultant — Drupal, Integration & GIS
+    org: Symphony3 — Melbourne, Australia (Remote)
+    desc: Architected systems integrations and rebuilt the company's flagship product as a cloud-native, Kubernetes-deployed application. Delivered 20+ client projects and mentored the wider engineering team on DevOps practice.
+  - date: Dec 2019 → Present
+    role: Web Systems Consultant
+    org: CIMMYT (Int'l Maize & Wheat Improvement Center) — Texcoco, Mexico (Remote)
+    desc: Leads a distributed team building the center's Learning Management System, and built a crop-production decision-support tool on GeoNode, an open-source geospatial CMS. Ongoing alongside other roles.
+  - date: Jan 2018 → Jul 2021
+    role: Frontend Developer
+    org: Axelerant — Atlanta, USA (Remote)
+    desc: Owned UI/UX for internal and client-facing web projects, from wireframes to responsive builds. Represented the company in the Drupal community — organizing meetups, speaking internationally, contributing code and translations.
+  - date: May 2017 → May 2018
+    role: Senior Drupal Developer (Consultant)
+    org: University of the Arts London — London, UK (Remote)
+    desc: Technical lead for the Institute for Conservation of Historic and Artistic Works, overseeing TDD/BDD-tested development across the IIC and Ligatus web platforms.
+  - date: Dec 2015 → Dec 2017
+    role: Web Systems Specialist
+    org: International Livestock Research Institute — Addis Ababa, Ethiopia
+    desc: Managed Linux infrastructure and led Drupal/WordPress platforms for the institute's Communication & Knowledge Management department, including the CGSpace document repository.
+  - date: May 2008 → Nov 2015
+    role: Chief Technology Officer
+    org: Cybersoft p.l.c — Addis Ababa, Ethiopia
+    desc: Grew from Software Engineer to Team Lead to CTO over seven years — steering technical direction, product portfolio, and client relationships while guiding delivery across the full SDLC.

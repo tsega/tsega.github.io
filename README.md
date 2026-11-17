@@ -33,7 +33,7 @@ app/
   assets/css/main.css  # Tailwind entry + design tokens (@theme)
 content/
   blog/*.md            # blog posts
-  data/*.yml           # homepage and site copy (nav, contact links, ...)
+  data/*.yml           # homepage and site copy, one file per section (see below)
 content.config.ts      # content collections + frontmatter schema
 design/
   portfolio/           # reference design from Claude Design — source of truth for the UI port
@@ -91,6 +91,25 @@ bun run image "$P/IMG_20190515_131442.jpg" community-training 480 768 1080
 ```
 
 It needs the `ssimulacra2` tool from libjxl: `brew install jpeg-xl`.
+
+## Homepage copy
+
+All homepage text lives in YAML files in `content/data/`, never in templates. Each file is
+a Nuxt Content `data` collection with a schema in `content.config.ts`, read with
+`queryCollection('<name>').first()`.
+
+| File              | Holds                                                           |
+| ----------------- | --------------------------------------------------------------- |
+| `site.yml`        | Header nav and the contact footer copy                          |
+| `links.yml`       | The contact links                                               |
+| `sections.yml`    | Each section's eyebrow, heading and "Sheet" label               |
+| `profile.yml`     | Hero, stats, About (facts, highlights, headshot)                |
+| `photos.yml`      | The four photo bands: image, alt text, captions                 |
+| `projects.yml`    | Flagship systems and "Further work"                             |
+| `skills.yml`      | Skill groups and the projects that used each skill              |
+| `experience.yml`  | The experience timeline                                         |
+| `education.yml`   | Education and certification                                     |
+| `community.yml`   | Community statement, cards, photo and timeline                  |
 
 ## Writing a blog post
 
