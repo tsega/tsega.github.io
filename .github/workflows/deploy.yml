@@ -1,33 +1,53 @@
-name: Deploy to GitHub Pages
+name: CI and deploy
 
+# Pull requests run the checks and the build. Pushes to master also deploy
+# the build to GitHub Pages.
 on:
   push:
     branches: [master]
+  pull_request:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
+# One run per branch or pull request; a newer push cancels the older run.
 concurrency:
-  group: pages
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
+  check:
+    name: Lint and typecheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-      - run: bun install
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+      - run: bun run typecheck
+
+  build:
+    name: Build
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
       - run: bun run generate
-      - uses: actions/upload-pages-artifact@v3
+      - if: github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
 
   deploy:
+    name: Deploy
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
