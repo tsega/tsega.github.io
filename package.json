@@ -29,5 +29,8 @@
     "eslint-plugin-jsdoc": "^63.3.3",
     "typescript": "~6.0.3",
     "vue-tsc": "^3.3.14"
+  },
+  "engines": {
+    "node": "^22.19.0 || ^24.11.0"
   }
 }

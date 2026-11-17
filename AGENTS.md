@@ -103,7 +103,8 @@ Every commit message follows this layout:
 - Everything in this site is public: the whole build is shipped to the browser. Never put secrets, tokens or private data in the code, the content or `runtimeConfig`.
 - Server routes (`server/`) exist only to be prerendered (RSS, sitemap). Add each one to `nitro.prerender.routes` or make sure the crawler reaches it.
 - Commit `bun.lock`: it locks the exact version of every package. Version ranges (`^`) in `package.json` are fine.
-- CI installs with `bun install --frozen-lockfile`, and uses the same Bun version as local development.
+- CI installs with `bun install --frozen-lockfile`.
+- The Bun version lives in `.bun-version` and the Node major version in `.node-version`; CI reads both, so local and CI match. Change them on purpose, together with `engines` in `package.json` for Node, and check that CI passes.
 - Update dependencies on purpose: run `bun update`, check that `bun run generate` still succeeds, and commit the updated lockfile as its own change.
 - Before adding a package with native code, check it works on Bun and on the CI runner (`ubuntu-latest`).
 - Never remove `public/CNAME`. Without it GitHub Pages drops the `tsega.dev` custom domain.
