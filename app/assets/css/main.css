@@ -1,2 +1,72 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+/*
+ * Default ("espresso") theme — source palette:
+ *   --color-bg                #1b1109  espresso
+ *   --color-bg-elevated       #2a1b10  roast
+ *   --color-bg-elevated-2     #3a2716  roast-2
+ *   --color-text              #f3ebdd  text
+ *   --color-text-muted        #b6a58e  text-muted
+ *   --color-heading           #f6efe2  cream
+ *   --color-border            #3a2c1c  border
+ *   --color-accent            #e0982b  gold
+ *   --color-accent-bright     #f0ac45  gold-bright
+ *   --color-accent-secondary  #1f3b2c  forest
+ *   --color-accent-secondary-bright #3d7a5a  forest-bright
+ */
+@theme {
+  --color-bg: #1b1109;
+  --color-bg-elevated: #2a1b10;
+  --color-bg-elevated-2: #3a2716;
+  --color-text: #f3ebdd;
+  --color-text-muted: #b6a58e;
+  --color-heading: #f6efe2;
+  --color-border: #3a2c1c;
+  --color-accent: #e0982b;
+  --color-accent-bright: #f0ac45;
+  --color-accent-secondary: #1f3b2c;
+  --color-accent-secondary-bright: #3d7a5a;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Karla", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-script: "Pinyon Script", cursive;
+}
+
+/*
+ * "Forest" theme — used by the footer/contact and blog-CTA sections in the
+ * original design. Scope it to any wrapper via data-theme="forest" and every
+ * Tailwind utility built on these tokens (bg-bg, text-text-muted, etc.)
+ * picks up the override automatically.
+ *   --color-bg                #142a1e
+ *   --color-bg-elevated       #1a3226
+ *   --color-bg-elevated-2     #20402f
+ *   --color-border            #2d4a37
+ *   --color-text              #f0f5ee
+ *   --color-text-muted        #8aa696
+ */
+[data-theme="forest"] {
+  --color-bg: #142a1e;
+  --color-bg-elevated: #1a3226;
+  --color-bg-elevated-2: #20402f;
+  --color-border: #2d4a37;
+  --color-text: #f0f5ee;
+  --color-text-muted: #8aa696;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
