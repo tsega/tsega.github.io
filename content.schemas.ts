@@ -108,6 +108,11 @@ const profile = z.object({
 const photos = z.object({
   bands: z.array(picture.extend({
     id: z.string(),
+    width: z.number().int()
+      .positive(),
+    height: z.number().int()
+      .positive(),
+    theme: z.enum(['forest']).optional(),
     caption: z.tuple([z.string(), z.string()])
   }))
 });
