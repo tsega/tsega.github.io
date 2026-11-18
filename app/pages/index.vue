@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// Sections in design order. Photos 2 to 4 sit between sections that later
-// issues add: Writing (#13), Community (#9), Skills and Experience (#9, #7).
+// Sections in design order. Writing (#13) comes after About; Work and
+// Community (#8, #9) before Photo 3; Skills (#9) before Experience.
 </script>
 
 <template>
@@ -8,8 +8,10 @@
     <HomeHero />
     <HomeStats />
     <HomePhotoBand band="addis" />
+    <HomeAbout />
     <HomePhotoBand band="babogaya" />
     <HomePhotoBand band="almadies" />
+    <HomeExperience />
     <HomePhotoBand band="after-hours" />
   </div>
 </template>
