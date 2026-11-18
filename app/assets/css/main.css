@@ -50,6 +50,22 @@
   --color-border-subtle: #33553f;
 }
 
+/*
+ * Gold palette, used only by the Community section: espresso text, rules,
+ * links and focus rings on the gold accent.
+ */
+[data-theme="gold"] {
+  --color-bg: #e0982b;
+  --color-text: #1b1109;
+  --color-heading: #1b1109;
+  --color-text-muted: #1b1109;
+  --color-border: #1b1109;
+  --color-border-strong: #1b1109;
+  --color-border-subtle: #1b1109;
+  --color-accent: #1b1109;
+  --color-accent-bright: #1b1109;
+}
+
 @layer base {
   /* Keep anchor targets clear of the 64px sticky header. */
   html {

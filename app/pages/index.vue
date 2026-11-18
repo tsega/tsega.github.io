@@ -1,6 +1,5 @@
 <script setup lang="ts">
-// Sections in design order. Writing (#13) comes after About, Community (#9)
-// after Work, and Skills (#9) before Experience.
+// Sections in design order. Writing (#13) comes after About.
 </script>
 
 <template>
@@ -11,7 +10,9 @@
     <HomeAbout />
     <HomePhotoBand band="babogaya" />
     <HomeWork />
+    <HomeCommunity />
     <HomePhotoBand band="almadies" />
+    <HomeSkills />
     <HomeExperience />
     <HomePhotoBand band="after-hours" />
   </div>
