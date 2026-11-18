@@ -19,7 +19,7 @@ const head = computed(() => sections.value?.experience);
         :heading="head.heading"
         :sheet="head.sheet"
         heading-id="experience-heading"
-        tight
+        spacing="sm"
       />
       <TimelineList
         v-if="experience"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{
+withDefaults(defineProps<{
   /** Gold label above the heading, e.g. "01 — About". */
   eyebrow: string;
   /** Drawing-sheet label on the right, e.g. "Sheet A-01". */
@@ -11,15 +11,25 @@ defineProps<{
   heading?: string;
   /** Id for the h2, so the section can point `aria-labelledby` at it. */
   headingId?: string;
-  /** 24px below the rule instead of 48px, as above the Experience timeline. */
-  tight?: boolean;
-}>();
+  /** Space below the rule: 24px (Experience), 48px or 56px (Work). */
+  spacing?: 'sm' | 'md' | 'lg';
+}>(), {
+  heading: undefined,
+  headingId: undefined,
+  spacing: 'md'
+});
+
+const margins = {
+  sm: 'mb-6',
+  md: 'mb-12',
+  lg: 'mb-14'
+};
 </script>
 
 <template>
   <div
     class="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-6 border-b-2 border-border pb-[18px]"
-    :class="tight ? 'mb-6' : 'mb-12'"
+    :class="margins[spacing]"
   >
     <div>
       <p class="text-[11px] font-semibold tracking-[0.16em] text-accent uppercase">
