@@ -124,7 +124,7 @@ const projects = z.object({
     title: z.string(),
     tech: z.object({
       name: z.string(),
-      logo: z.string()
+      logo: z.enum(['drupal', 'dotnet', 'rubyonrails'])
     }),
     metric: z.string(),
     brief: z.string(),

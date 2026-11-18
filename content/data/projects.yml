@@ -1,5 +1,5 @@
 # Work section: three flagship systems and the "Further work" schedule.
-# `logo` names the technology mark that #8 self-hosts.
+# `logo` is a key of techLogos in app/utils/tech-logos.ts.
 flagship:
   - number: '01'
     context: Symphony3, 2021–2025
