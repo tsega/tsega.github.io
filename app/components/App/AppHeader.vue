@@ -39,7 +39,7 @@ const { site } = await useSite();
         <NuxtLink
           v-if="site"
           :to="site.contact.href"
-          class="bg-accent px-3.5 py-2 font-bold text-bg hover:bg-accent-bright hover:text-bg active:bg-accent-pressed"
+          class="bg-accent px-3.5 py-2 font-bold text-on-accent hover:bg-accent-bright hover:text-on-accent active:bg-accent-pressed"
         >
           {{ site.contact.label }}
         </NuxtLink>

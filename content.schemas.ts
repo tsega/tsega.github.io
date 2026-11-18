@@ -37,6 +37,12 @@ const blog = z.object({
   title: z.string(),
   description: z.string(),
   date: z.date(),
+  // Kicker shown above the title, e.g. "Architecture".
+  category: z.string(),
+  // Optional label beside the kicker, e.g. "Long read".
+  format: z.string().optional(),
+  // Drafts are listed in dev and left out of the production build.
+  draft: z.boolean().default(false),
   cover: z.string().optional(),
   tags: z.array(z.string()).optional()
 });
@@ -67,6 +73,7 @@ const sections = z.object({
   about: sectionHead,
   writing: sectionHead.extend({
     readMore: z.string(),
+    empty: z.string(),
     subscribe: link.extend({
       text: z.string()
     })

@@ -2,6 +2,8 @@
 title: Hello, world
 description: First post - testing the Nuxt Content pipeline.
 date: 2026-09-13
+category: Meta
+draft: true
 tags: [meta]
 ---
 

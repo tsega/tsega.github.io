@@ -122,14 +122,20 @@ Create `content/blog/<slug>.md`. The file name becomes the URL (`/blog/<slug>`).
 title: My post title
 description: One-sentence summary used in listings and meta tags.
 date: 2026-11-21
-tags: [architecture, drupal]
+category: Architecture             # kicker above the title
+format: Long read                  # optional, shown beside the kicker
+tags: [architecture, drupal]       # optional
 cover: /images/blog/my-cover.jpg   # optional
+draft: true                        # optional; drafts only show in `bun run dev`
 ---
 
 Post body in Markdown.
 ```
 
-`title`, `description` and `date` are required. The build fails if they're missing,
+The newest post is featured in the homepage's Writing section and the next two
+are listed beside it. With no published posts it shows "First posts coming soon".
+
+`title`, `description`, `date` and `category` are required. The build fails if they're missing,
 because `modules/content-validation.ts` checks every post and data file against
 `content.schemas.ts`. The error names the file and each field that's wrong. In
 `bun run dev` the same problems are printed in the terminal instead.

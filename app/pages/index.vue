@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// Sections in design order. Writing (#13) comes after About.
+// Sections in design order.
 </script>
 
 <template>
@@ -8,6 +8,7 @@
     <HomeStats />
     <HomePhotoBand band="addis" />
     <HomeAbout />
+    <HomeWriting />
     <HomePhotoBand band="babogaya" />
     <HomeWork />
     <HomeCommunity />
