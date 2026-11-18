@@ -81,7 +81,13 @@ const sections = z.object({
   work: sectionHead,
   community: sectionHead,
   skills: sectionHead,
-  experience: sectionHead
+  experience: sectionHead,
+  // The /blog index page, not a homepage section.
+  blog: sectionHead.extend({
+    title: z.string(),
+    description: z.string(),
+    empty: z.string()
+  })
 });
 
 const profile = z.object({

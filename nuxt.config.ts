@@ -31,7 +31,11 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-07-15',
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    prerender: {
+      // Nothing links to the blog index yet; posts are crawled from it.
+      routes: ['/blog']
+    }
   },
   vite: {
     plugins: [tailwindcss()]

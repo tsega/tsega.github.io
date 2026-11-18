@@ -30,3 +30,12 @@ experience:
   eyebrow: 06 — Experience
   heading: One thread, branching wide.
   sheet: Sheet A-06
+# The /blog index page. `title` and `description` go in the page head.
+blog:
+  eyebrow: Writing — All posts
+  heading: Notes from the drawing board.
+  sheet: Sheet B-01
+  title: Writing
+  # Placeholder: Tsega to confirm or replace.
+  description: Posts by Tsegaselassie Tadesse, notes from the drawing board.
+  empty: First posts coming soon.
