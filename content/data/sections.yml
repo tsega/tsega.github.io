@@ -11,10 +11,11 @@ writing:
   readMore: Read the post
   # Shown in place of the posts until the first one is published.
   empty: First posts coming soon.
+  # Points at the RSS feed until the newsletter (#25) brings email back.
   subscribe:
-    text: New posts by email
+    text: Follow new posts by RSS
     label: Subscribe
-    href: mailto:tsegaselassi@gmail.com?subject=Subscribe%20to%20posts
+    href: /rss.xml
 work:
   eyebrow: 03 — Work
   heading: Systems, not just sites.

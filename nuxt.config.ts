@@ -34,6 +34,12 @@ export default defineNuxtConfig({
         {
           rel: 'apple-touch-icon',
           href: '/apple-touch-icon.png'
+        },
+        {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          title: 'Writing — Tsegaselassie Tadesse',
+          href: '/rss.xml'
         }
       ]
     }
@@ -55,7 +61,7 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       // Nothing links to the blog index yet; posts are crawled from it.
-      routes: ['/blog']
+      routes: ['/blog', '/rss.xml']
     }
   },
   vite: {

@@ -6,7 +6,7 @@ defineProps<{
     text: string;
     /** Button label. */
     label: string;
-    /** Where the button goes: a mailto link for now, a newsletter later. */
+    /** Where the button goes: the RSS feed for now, a newsletter later. */
     href: string;
   };
 }>();

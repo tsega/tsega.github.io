@@ -37,6 +37,7 @@ content/
 content.config.ts      # content collections
 content.schemas.ts     # their schemas, checked on every build
 modules/               # local Nuxt modules (content schema check)
+server/routes/         # prerendered server routes (rss.xml)
 design/
   portfolio/           # reference design from Claude Design — source of truth for the UI port
 public/                # copied as-is to the site root (CNAME, favicon, logo, robots.txt)
@@ -146,6 +147,11 @@ Shiki with the `gruvbox-dark-medium` theme; the languages it loads are listed in
 `content.build.markdown.highlight.langs` in `nuxt.config.ts`, so add a language
 there before using it. Headings (h2 to h4) link to themselves. Put post images
 in `public/images/blog/` and generate them with `bun run image`.
+
+Published posts also go into the RSS feed at `/rss.xml` (`server/routes/rss.xml.ts`),
+newest first, with each post's title, description, date and category. Drafts
+are never in the feed, not even in `bun run dev`. Absolute links in the feed use `url` from
+`content/data/site.yml`. The "Subscribe" button in the Writing section links to the feed.
 
 `title`, `description`, `date` and `category` are required. The build fails if they're missing,
 because `modules/content-validation.ts` checks every post and data file against
