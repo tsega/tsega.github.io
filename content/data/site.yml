@@ -1,4 +1,6 @@
 # Site-wide copy: header navigation and the contact footer.
+# Canonical origin, no trailing slash.
+url: https://tsega.dev
 name: Tsega Tadesse
 fullName: Tsegaselassie Tadesse
 logoAlt: ፀጋ
