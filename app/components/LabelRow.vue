@@ -26,7 +26,8 @@ const columns = {
 
 const rowClass = computed(() => [
   columns[props.labelWidth],
-  props.variant === 'card' ? 'items-baseline px-5 py-[18px]' : 'py-3.5'
+  // Card rows sit in a bordered box, so the last one drops its rule.
+  props.variant === 'card' ? 'items-baseline px-5 py-[18px] last:border-b-0' : 'py-3.5'
 ]);
 
 const labelClass = computed(() => [
@@ -37,7 +38,7 @@ const labelClass = computed(() => [
 
 <template>
   <div
-    class="grid gap-4 border-b border-border-subtle last:border-b-0"
+    class="grid gap-4 border-b border-border-subtle"
     :class="rowClass"
   >
     <dt
