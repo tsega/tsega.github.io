@@ -48,8 +48,9 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
+        // Same weights as the design: 500 renders as 400 and 700 as 800.
         name: 'Archivo',
-        weights: [400, 500, 600, 700, 800]
+        weights: [400, 600, 800]
       },
       {
         name: 'Pinyon Script',
