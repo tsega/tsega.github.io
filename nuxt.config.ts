@@ -68,6 +68,10 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     prerender: {
+      // Write blog.html rather than blog/index.html. GitHub Pages redirects
+      // /blog to /blog/ for a folder, but serves blog.html at /blog, which
+      // matches the canonical URLs and the sitemap.
+      autoSubfolderIndex: false,
       // Nothing links to the blog index yet; posts are crawled from it.
       routes: ['/blog', '/rss.xml', '/sitemap.xml']
     }
