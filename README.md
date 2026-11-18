@@ -126,6 +126,7 @@ category: Architecture             # kicker above the title
 format: Long read                  # optional, shown beside the kicker
 tags: [architecture, drupal]       # optional
 cover: /images/blog/my-cover.jpg   # optional
+coverAlt: What the cover shows     # optional; leave out if decorative
 draft: true                        # optional; drafts only show in `bun run dev`
 ---
 
@@ -137,6 +138,14 @@ are listed beside it. Every post is listed, newest first, on `/blog`; its headin
 page title, description and empty-state text are the `blog` block in
 `content/data/sections.yml`. With no published posts both places show
 "First posts coming soon".
+
+Each post is rendered at `/blog/<slug>` with its category, date, an estimated
+reading time (220 words a minute, code not counted), tags, the optional cover,
+and links to the newer and older posts. Fenced code blocks are highlighted by
+Shiki with the `gruvbox-dark-medium` theme; the languages it loads are listed in
+`content.build.markdown.highlight.langs` in `nuxt.config.ts`, so add a language
+there before using it. Headings (h2 to h4) link to themselves. Put post images
+in `public/images/blog/` and generate them with `bun run image`.
 
 `title`, `description`, `date` and `category` are required. The build fails if they're missing,
 because `modules/content-validation.ts` checks every post and data file against

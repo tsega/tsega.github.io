@@ -3,6 +3,16 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/fonts'],
+  components: [
+    // Overrides for Nuxt Content's prose elements (ProsePre and so on) keep
+    // their bare names; every other component is named after its folder.
+    {
+      path: '~/components/content',
+      pathPrefix: false,
+      global: true
+    },
+    '~/components'
+  ],
   devtools: { enabled: true },
   app: {
     head: {
@@ -29,6 +39,17 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/css/main.css'],
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          // Warm, low-contrast dark theme that sits well on espresso.
+          theme: 'gruvbox-dark-medium',
+          langs: ['bash', 'css', 'diff', 'html', 'js', 'json', 'php', 'sql', 'ts', 'vue', 'yaml']
+        }
+      }
+    }
+  },
   compatibilityDate: '2025-07-15',
   nitro: {
     preset: 'static',
