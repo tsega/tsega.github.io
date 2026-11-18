@@ -23,7 +23,8 @@ Work is tracked as GitHub issues in [`tsega/tsega.github.io`](https://github.com
 - `app/assets/css/main.css`: Tailwind entry point and design tokens
 - `content/blog/`: blog posts, one Markdown file per post
 - `content/data/`: homepage copy as YAML (experience, projects, skills and so on)
-- `content.config.ts`: content collections and their schemas
+- `content.config.ts`: content collections; `content.schemas.ts`: their zod schemas
+- `modules/`: local Nuxt modules, such as the content schema check
 - `design/portfolio/`: the reference design exported from Claude Design; not deployed
 - `eslint/`: our own lint rules
 - `public/`: copied as-is to the site root (`CNAME`, favicon, images, `robots.txt`)
@@ -40,7 +41,7 @@ bun run generate     # prerender the whole site to .output/public
 bun run preview      # serve the generated site locally
 ```
 
-There is no test runner yet. Never use `bun test`: it starts Bun's own test runner, which can't run Nuxt code. A change is done when `bun run lint`, `bun run typecheck` and `bun run generate` all succeed. `generate` also checks every post's frontmatter against the schema.
+There is no test runner yet. Never use `bun test`: it starts Bun's own test runner, which can't run Nuxt code. A change is done when `bun run lint`, `bun run typecheck` and `bun run generate` all succeed. `generate` also checks every post's frontmatter and every data file against `content.schemas.ts`, and fails on a mismatch.
 
 ## Workflow
 
@@ -90,7 +91,7 @@ Every commit message follows this layout:
 ## Content rules
 
 - Homepage copy lives in `content/data/` YAML files, not in templates.
-- Blog posts live in `content/blog/<slug>.md`; the file name is the URL. Frontmatter must match the schema in `content.config.ts`.
+- Blog posts live in `content/blog/<slug>.md`; the file name is the URL. Frontmatter must match the schema in `content.schemas.ts`.
 - Facts about Tsega (roles, employers, dates, projects, metrics, certifications) come from the existing content or from Tsega. Never invent, round up or embellish them. When a fact looks wrong or inconsistent, flag it instead of fixing it silently.
 - Don't write blog posts or homepage copy in Tsega's voice unless asked. Placeholder text is clearly marked as placeholder.
 - Images are self-hosted under `public/images/`, never hotlinked. Never commit an original straight from a camera or phone: it carries metadata (EXIF, including GPS location, XMP and IPTC) and is far too large.

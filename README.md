@@ -34,7 +34,9 @@ app/
 content/
   blog/*.md            # blog posts
   data/*.yml           # homepage and site copy, one file per section (see below)
-content.config.ts      # content collections + frontmatter schema
+content.config.ts      # content collections
+content.schemas.ts     # their schemas, checked on every build
+modules/               # local Nuxt modules (content schema check)
 design/
   portfolio/           # reference design from Claude Design — source of truth for the UI port
 public/                # copied as-is to the site root (CNAME, favicon, logo, robots.txt)
@@ -95,7 +97,7 @@ It needs the `ssimulacra2` tool from libjxl: `brew install jpeg-xl`.
 ## Homepage copy
 
 All homepage text lives in YAML files in `content/data/`, never in templates. Each file is
-a Nuxt Content `data` collection with a schema in `content.config.ts`, read with
+a Nuxt Content `data` collection with a schema in `content.schemas.ts`, read with
 `queryCollection('<name>').first()`.
 
 | File              | Holds                                                           |
@@ -128,7 +130,9 @@ Post body in Markdown.
 ```
 
 `title`, `description` and `date` are required. The build fails if they're missing,
-because `content.config.ts` validates them.
+because `modules/content-validation.ts` checks every post and data file against
+`content.schemas.ts`. The error names the file and each field that's wrong. In
+`bun run dev` the same problems are printed in the terminal instead.
 
 ## Deployment
 
