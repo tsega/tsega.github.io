@@ -20,6 +20,14 @@ export default defineNuxtConfig({
         lang: 'en'
       },
       title: 'Tsegaselassie Tadesse — Senior Software Architect',
+      // Pages set their own title through usePageSeo; the homepage opts out.
+      titleTemplate: '%s · Tsega.dev',
+      meta: [
+        {
+          name: 'theme-color',
+          content: '#1b1109'
+        }
+      ],
       link: [
         {
           rel: 'icon',
@@ -61,7 +69,7 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       // Nothing links to the blog index yet; posts are crawled from it.
-      routes: ['/blog', '/rss.xml']
+      routes: ['/blog', '/rss.xml', '/sitemap.xml']
     }
   },
   vite: {

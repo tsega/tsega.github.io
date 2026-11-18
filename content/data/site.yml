@@ -1,6 +1,14 @@
 # Site-wide copy: header navigation and the contact footer.
 # Canonical origin, no trailing slash.
 url: https://tsega.dev
+# Homepage <title> and description, and the image shown when a page without
+# its own image is shared. The description is a placeholder built from the
+# hero; Tsega to confirm or replace.
+seo:
+  title: Tsegaselassie Tadesse — Senior Software Architect
+  description: Tsegaselassie Tadesse is a Senior Software Architect in Addis Ababa, working remotely worldwide on enterprise architecture and intelligent systems.
+  image: /og-image.png
+  imageAlt: Tsegaselassie Tadesse, Senior Software Architect, on an espresso and gold blueprint grid
 name: Tsega Tadesse
 fullName: Tsegaselassie Tadesse
 logoAlt: ፀጋ

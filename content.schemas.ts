@@ -52,6 +52,13 @@ const blog = z.object({
 const site = z.object({
   // Canonical origin, no trailing slash; used for absolute links in the feed.
   url: z.string().url(),
+  // Homepage title and description, and the default social image.
+  seo: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string(),
+    imageAlt: z.string()
+  }),
   name: z.string(),
   fullName: z.string(),
   logoAlt: z.string(),

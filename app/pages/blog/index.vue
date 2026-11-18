@@ -1,14 +1,13 @@
 <script setup lang="ts">
 const { data: sections } = await useDataFile('sections');
-const { site } = await useSite();
 const { posts } = await useLatestPosts();
 
 const page = computed(() => sections.value?.blog);
 const subscribe = computed(() => sections.value?.writing.subscribe);
 
-useSeoMeta({
-  title: () => `${page.value?.title} — ${site.value?.fullName}`,
-  description: () => page.value?.description
+await usePageSeo(() => page.value && {
+  title: page.value.title,
+  description: page.value.description
 });
 </script>
 
