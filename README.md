@@ -104,7 +104,7 @@ a Nuxt Content `data` collection with a schema in `content.schemas.ts`, read wit
 | ----------------- | --------------------------------------------------------------- |
 | `site.yml`        | Header nav and the contact footer copy                          |
 | `links.yml`       | The contact links                                               |
-| `sections.yml`    | Each section's eyebrow, heading and "Sheet" label               |
+| `sections.yml`    | Section eyebrows, headings and "Sheet" labels, and the `/blog` page |
 | `profile.yml`     | Hero, stats, About (facts, highlights, headshot)                |
 | `photos.yml`      | The four photo bands: image, alt text, captions                 |
 | `projects.yml`    | Flagship systems and "Further work"                             |
@@ -133,7 +133,10 @@ Post body in Markdown.
 ```
 
 The newest post is featured in the homepage's Writing section and the next two
-are listed beside it. With no published posts it shows "First posts coming soon".
+are listed beside it. Every post is listed, newest first, on `/blog`; its heading,
+page title, description and empty-state text are the `blog` block in
+`content/data/sections.yml`. With no published posts both places show
+"First posts coming soon".
 
 `title`, `description`, `date` and `category` are required. The build fails if they're missing,
 because `modules/content-validation.ts` checks every post and data file against

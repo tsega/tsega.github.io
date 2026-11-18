@@ -13,10 +13,13 @@ withDefaults(defineProps<{
   headingId?: string;
   /** Space below the rule: 24px (Experience), 48px or 56px (Work). */
   spacing?: 'sm' | 'md' | 'lg';
+  /** Heading element: h2 for homepage sections, h1 when it heads a page. */
+  level?: 'h1' | 'h2';
 }>(), {
   heading: undefined,
   headingId: undefined,
-  spacing: 'md'
+  spacing: 'md',
+  level: 'h2'
 });
 
 const margins = {
@@ -35,13 +38,14 @@ const margins = {
       <p class="text-[11px] font-semibold tracking-[0.16em] text-accent uppercase">
         {{ eyebrow }}
       </p>
-      <h2
+      <component
+        :is="level"
         v-if="heading"
         :id="headingId"
         class="mt-2.5 text-[clamp(1.875rem,3.8vw,2.75rem)] leading-[1.05] font-extrabold tracking-[-0.02em] text-heading"
       >
         {{ heading }}
-      </h2>
+      </component>
     </div>
     <p class="text-[11px] font-semibold tracking-[0.14em] text-text-muted uppercase">
       {{ sheet }}
