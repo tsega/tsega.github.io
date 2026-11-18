@@ -44,6 +44,8 @@ const blog = z.object({
   // Drafts are listed in dev and left out of the production build.
   draft: z.boolean().default(false),
   cover: z.string().optional(),
+  // Describes the cover; leave it out when the cover is decorative.
+  coverAlt: z.string().optional(),
   tags: z.array(z.string()).optional()
 });
 
@@ -86,7 +88,15 @@ const sections = z.object({
   blog: sectionHead.extend({
     title: z.string(),
     description: z.string(),
-    empty: z.string()
+    empty: z.string(),
+    // Labels on each post page.
+    post: z.object({
+      back: z.string(),
+      minutes: z.string(),
+      newer: z.string(),
+      older: z.string(),
+      tags: z.string()
+    })
   })
 });
 

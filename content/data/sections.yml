@@ -39,3 +39,10 @@ blog:
   # Placeholder: Tsega to confirm or replace.
   description: Posts by Tsegaselassie Tadesse, notes from the drawing board.
   empty: First posts coming soon.
+  # Labels on each post page. `minutes` follows the number: "4 min read".
+  post:
+    back: All posts
+    minutes: min read
+    newer: Newer post
+    older: Older post
+    tags: Tags
