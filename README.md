@@ -37,10 +37,11 @@ content/
 content.config.ts      # content collections
 content.schemas.ts     # their schemas, checked on every build
 modules/               # local Nuxt modules (content schema check)
-server/routes/         # prerendered server routes (rss.xml)
+server/routes/         # prerendered server routes (rss.xml, sitemap.xml)
+scripts/og-image.html  # source of the default social preview image
 design/
   portfolio/           # reference design from Claude Design — source of truth for the UI port
-public/                # copied as-is to the site root (CNAME, favicon, logo, robots.txt)
+public/                # copied as-is to the site root (CNAME, favicon, logo, og-image.png, robots.txt)
 ```
 
 ## Design tokens
@@ -157,6 +158,22 @@ are never in the feed, not even in `bun run dev`. Absolute links in the feed use
 because `modules/content-validation.ts` checks every post and data file against
 `content.schemas.ts`. The error names the file and each field that's wrong. In
 `bun run dev` the same problems are printed in the terminal instead.
+
+## Search and social previews
+
+Each page sets its title, description, canonical URL and Open Graph / Twitter
+tags with `usePageSeo` (`app/composables/usePageSeo.ts`). Titles get the
+` · Tsega.dev` suffix except on the homepage, whose title and description are
+`seo` in `content/data/site.yml`.
+
+- **Social image:** `public/og-image.png` (1200×630) is used for every page
+  without its own image. A post with a `cover` uses the cover instead, so make
+  covers at least 1200×630. The PNG is a screenshot of `scripts/og-image.html`;
+  the command to regenerate it is at the top of that file.
+- **Structured data:** the homepage has a JSON-LD `Person` (name, role, headshot
+  and the profile links from `links.yml`); each post has a `BlogPosting`.
+- **Sitemap:** `/sitemap.xml` lists the homepage, `/blog` and every published
+  post (`server/routes/sitemap.xml.ts`); `public/robots.txt` points to it.
 
 ## Deployment
 

@@ -28,9 +28,35 @@ const labels = computed(() => sections.value?.blog.post);
 const newer = computed(() => surroundings.value?.[0]);
 const older = computed(() => surroundings.value?.[1]);
 
+await usePageSeo(() => post.value && {
+  title: post.value.title,
+  description: post.value.description,
+  image: post.value.cover,
+  imageAlt: post.value.cover ? post.value.coverAlt : undefined,
+  type: 'article'
+});
+
 useSeoMeta({
-  title: () => `${post.value?.title} — ${site.value?.fullName}`,
-  description: () => post.value?.description
+  articlePublishedTime: () => post.value && isoDate(post.value.date),
+  articleSection: () => post.value?.category,
+  articleTag: () => post.value?.tags
+});
+
+const posting = computed(() => {
+  if (!post.value || !site.value) {
+    return undefined;
+  }
+  const url = `${site.value.url}${post.value.path}`;
+  const image = `${site.value.url}${post.value.cover ?? site.value.seo.image}`;
+  return blogPostingLd(post.value, url, image, {
+    '@type': 'Person',
+    'name': site.value.fullName,
+    'url': site.value.url
+  });
+});
+
+useHead({
+  script: () => (posting.value ? [jsonLdScript(posting.value)] : [])
 });
 </script>
 

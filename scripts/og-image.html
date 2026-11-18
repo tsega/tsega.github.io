@@ -1,0 +1,88 @@
+<!doctype html>
+<!--
+  Source of public/og-image.png, the default social preview (1200×630).
+  Not deployed. To regenerate it, open this file in Chrome with the
+  viewport at 1200×630 and take a screenshot, or render it headless:
+  chrome --headless --screenshot=public/og-image.png \
+    --window-size=1200,630 --hide-scrollbars scripts/og-image.html
+  The words come from content/data/profile.yml and site.yml; keep them in
+  step if those change.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Social preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Pinyon+Script&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1b1109;
+    --text: #f6efe2;
+    --muted: #b6a58e;
+    --accent: #e0982b;
+    --major: color-mix(in srgb, var(--accent) 9%, transparent);
+    --minor: color-mix(in srgb, var(--accent) 3.5%, transparent);
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative;
+    padding: 64px 72px;
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(var(--major) 1px, transparent 1px),
+      linear-gradient(90deg, var(--major) 1px, transparent 1px),
+      linear-gradient(var(--minor) 1px, transparent 1px),
+      linear-gradient(90deg, var(--minor) 1px, transparent 1px);
+    background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+    color: var(--text);
+    font-family: Archivo, system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .top, .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .top { color: var(--accent); }
+  .top span:last-child { color: var(--muted); }
+  .main { display: flex; align-items: center; gap: 48px; }
+  .logo { width: 150px; height: auto; }
+  .name {
+    font-family: "Pinyon Script", cursive;
+    font-size: 104px;
+    line-height: 1.05;
+    color: var(--text);
+  }
+  .role {
+    margin-top: 14px;
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .bottom {
+    padding-top: 22px;
+    border-top: 2px solid var(--accent);
+    color: var(--muted);
+  }
+  .bottom span:last-child { color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="top"><span>Sheet A-00</span><span>Addis Ababa · remote worldwide</span></div>
+  <div class="main">
+    <img class="logo" src="../public/tsega-logo.svg" alt="">
+    <div>
+      <p class="name">Tsegaselassie Tadesse</p>
+      <p class="role">Senior Software Architect</p>
+    </div>
+  </div>
+  <div class="bottom"><span>Think · Build · Release</span><span>tsega.dev</span></div>
+</body>
+</html>
