@@ -9,6 +9,8 @@ writing:
   heading: Notes from the drawing board.
   sheet: Sheet A-02
   readMore: Read the post
+  # Shown in place of the posts until the first one is published.
+  empty: First posts coming soon.
   subscribe:
     text: New posts by email
     label: Subscribe

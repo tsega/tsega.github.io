@@ -31,6 +31,9 @@
   --color-accent-bright: #f0ac45;
   --color-accent-pressed: #c77f18;
 
+  /* Text on a gold fill; stays espresso in every palette. */
+  --color-on-accent: #1b1109;
+
   --font-sans: "Archivo", system-ui, sans-serif;
   --font-script: "Pinyon Script", cursive;
 }

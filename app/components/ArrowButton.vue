@@ -16,7 +16,7 @@ const sizeClass = computed(() => props.size === 'sm'
 <template>
   <NuxtLink
     :to="to"
-    class="flex items-center justify-between bg-accent font-bold text-bg hover:bg-accent-bright hover:text-bg active:bg-accent-pressed"
+    class="flex items-center justify-between bg-accent font-bold text-on-accent hover:bg-accent-bright hover:text-on-accent active:bg-accent-pressed"
     :class="sizeClass"
   >
     <span><slot /></span>
