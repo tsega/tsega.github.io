@@ -22,7 +22,6 @@ const { site } = await useSite();
         <span class="text-[15px] font-bold tracking-[0.01em]">{{ site?.name }}</span>
       </NuxtLink>
       <div class="flex items-center gap-7 text-[13px] font-medium">
-        <!-- Phones get the menu from #3; until then only Contact shows. -->
         <ul class="hidden items-center gap-7 md:flex">
           <li
             v-for="link in site?.nav"
@@ -39,10 +38,11 @@ const { site } = await useSite();
         <NuxtLink
           v-if="site"
           :to="site.contact.href"
-          class="bg-accent px-3.5 py-2 font-bold text-on-accent hover:bg-accent-bright hover:text-on-accent active:bg-accent-pressed"
+          class="hidden bg-accent px-3.5 py-2 font-bold text-on-accent md:block hover:bg-accent-bright hover:text-on-accent active:bg-accent-pressed"
         >
           {{ site.contact.label }}
         </NuxtLink>
+        <AppMobileMenu />
       </div>
     </nav>
   </header>
