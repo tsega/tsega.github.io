@@ -175,6 +175,17 @@ tags with `usePageSeo` (`app/composables/usePageSeo.ts`). Titles get the
 - **Sitemap:** `/sitemap.xml` lists the homepage, `/blog` and every published
   post (`server/routes/sitemap.xml.ts`); `public/robots.txt` points to it.
 
+## Error page
+
+`app/error.vue` shows the error page inside the normal header and footer: the
+"404 — Sheet missing" copy for missing pages and posts, and a general message
+for anything else. The copy is the `error` block in `content/data/sections.yml`.
+
+GitHub Pages serves `404.html` for every unknown path. Nuxt normally writes
+that file as an empty shell that needs JavaScript, so `app/pages/404.vue`
+renders the same page and a `prerender:generate` hook in `nuxt.config.ts` saves
+it as `404.html` instead. Error pages are marked `noindex`.
+
 ## Deployment
 
 The site is hosted on **GitHub Pages** at <https://tsega.dev>.
