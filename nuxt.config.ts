@@ -103,16 +103,27 @@ export default defineNuxtConfig({
       }
     }
   },
+  // Each family is preloaded, so text paints in its own font rather than
+  // shifting when it swaps in. Only one file per family is preloaded, so:
+  // Latin only (other subsets would fall back anyway, unpreloaded), and
+  // Archivo upright only, or the italic gets the preload; the browser
+  // slants the upright face for <em>.
   fonts: {
     families: [
       {
         // Same weights as the design: 500 renders as 400 and 700 as 800.
         name: 'Archivo',
-        weights: [400, 600, 800]
+        weights: [400, 600, 800],
+        styles: ['normal'],
+        subsets: ['latin'],
+        preload: true
       },
       {
+        // The hero name, the homepage's largest paint.
         name: 'Pinyon Script',
-        weights: [400]
+        weights: [400],
+        subsets: ['latin'],
+        preload: true
       }
     ]
   }
