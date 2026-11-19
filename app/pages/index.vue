@@ -35,7 +35,7 @@ useHead({
   <div>
     <HomeHero />
     <HomeStats />
-    <HomePhotoBand band="addis" />
+    <HomePhotoBand band="abijatta-shalla" />
     <HomeAbout />
     <HomeWriting />
     <HomePhotoBand band="babogaya" />

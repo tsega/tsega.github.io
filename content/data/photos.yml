@@ -4,15 +4,15 @@
 # `theme: forest` gives the band the Writing section's rule and caption
 # colours.
 bands:
-  - id: addis
+  - id: abijatta-shalla
     image: band-acacia
     widths: [768, 960]
     width: 960
     height: 320
     alt: An acacia tree in open savanna, with antelope grazing behind it
     caption:
-      - 'Site: Addis Ababa, Ethiopia'
-      - 9.03° N, 38.74° E
+      - Abijatta-Shalla National Park, Ethiopia
+      - Acacia woodland dominates Ethiopia's Rift Valley lakes region
   - id: babogaya
     image: band-babogaya-lake
     widths: [768, 1280, 1900]
