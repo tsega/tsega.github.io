@@ -73,11 +73,26 @@ export default defineNuxtConfig({
       // matches the canonical URLs and the sitemap.
       autoSubfolderIndex: false,
       // Nothing links to the blog index yet; posts are crawled from it.
-      routes: ['/blog', '/rss.xml', '/sitemap.xml']
+      routes: ['/blog', '/rss.xml', '/sitemap.xml', '/404']
     }
   },
   vite: {
     plugins: [tailwindcss()]
+  },
+  hooks: {
+    // Nuxt always renders /404.html as an empty shell filled in by
+    // JavaScript. Drop it, and save the prerendered /404 page in its place,
+    // so the 404 that GitHub Pages serves is readable without JavaScript.
+    'nitro:init'(nitro) {
+      nitro.hooks.hook('prerender:generate', (route) => {
+        if (route.route === '/404.html') {
+          route.skip = true;
+        }
+        else if (route.route === '/404') {
+          route.fileName = '/404.html';
+        }
+      });
+    }
   },
   eslint: {
     config: {

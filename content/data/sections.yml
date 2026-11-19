@@ -31,6 +31,23 @@ experience:
   eyebrow: 06 — Experience
   heading: One thread, branching wide.
   sheet: Sheet A-06
+# The error page (app/error.vue). `notFound` is the 404 that GitHub Pages
+# serves for unknown paths; `other` covers anything else that goes wrong.
+error:
+  notFound:
+    eyebrow: 404 — Sheet missing
+    heading: This sheet isn't in the set.
+    sheet: Sheet X-404
+    title: Page not found
+    text: The page may have moved, or the link may be mistyped. Start again from the homepage, or browse the writing.
+  other:
+    eyebrow: Error — Sheet damaged
+    heading: Something went wrong on this sheet.
+    sheet: Sheet X-500
+    title: Something went wrong
+    text: The page couldn't be drawn. Try again in a moment, or start again from the homepage.
+  home: Back to the homepage
+  blog: or read the writing
 # The /blog index page. `title` and `description` go in the page head.
 blog:
   eyebrow: Writing — All posts

@@ -93,6 +93,21 @@ const sections = z.object({
   community: sectionHead,
   skills: sectionHead,
   experience: sectionHead,
+  // The error page: one block for 404s and one for anything else.
+  error: z.object({
+    notFound: sectionHead.extend({
+      heading: z.string(),
+      title: z.string(),
+      text: z.string()
+    }),
+    other: sectionHead.extend({
+      heading: z.string(),
+      title: z.string(),
+      text: z.string()
+    }),
+    home: z.string(),
+    blog: z.string()
+  }),
   // The /blog index page, not a homepage section.
   blog: sectionHead.extend({
     title: z.string(),

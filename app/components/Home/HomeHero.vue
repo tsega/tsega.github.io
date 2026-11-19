@@ -75,17 +75,3 @@ const hero = computed(() => profile.value?.hero);
     </div>
   </section>
 </template>
-
-<style scoped>
-/* Blueprint paper: 120px major and 24px minor lines in faint gold. */
-.blueprint {
-  --major: color-mix(in srgb, var(--color-accent) 9%, transparent);
-  --minor: color-mix(in srgb, var(--color-accent) 3.5%, transparent);
-  background-image:
-    linear-gradient(var(--major) 1px, transparent 1px),
-    linear-gradient(90deg, var(--major) 1px, transparent 1px),
-    linear-gradient(var(--minor) 1px, transparent 1px),
-    linear-gradient(90deg, var(--minor) 1px, transparent 1px);
-  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
-}
-</style>
