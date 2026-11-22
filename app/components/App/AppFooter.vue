@@ -30,15 +30,19 @@ const year = new Date().getFullYear();
         >
           <NuxtLink
             :to="link.href"
-            class="grid h-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-[22px] text-heading hover:bg-bg-hover hover:text-heading"
+            class="group grid h-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 px-6 py-[22px] text-heading hover:bg-accent hover:text-on-accent focus-visible:bg-accent focus-visible:text-on-accent active:bg-accent-pressed"
           >
+            <TechLogo
+              :name="link.icon"
+              class="size-6 text-accent group-hover:text-on-accent group-focus-visible:text-on-accent"
+            />
             <span class="flex min-w-0 flex-col gap-[3px]">
               <span class="text-base font-bold">{{ link.title }}</span>
-              <span class="text-[13px] wrap-anywhere text-text-muted">{{ link.sub }}</span>
+              <span class="text-[13px] wrap-anywhere text-text-muted group-hover:text-on-accent group-focus-visible:text-on-accent">{{ link.sub }}</span>
             </span>
             <span
               aria-hidden="true"
-              class="text-lg text-accent"
+              class="text-lg text-accent group-hover:text-on-accent group-focus-visible:text-on-accent motion-safe:transition-transform motion-safe:group-hover:translate-x-1 motion-safe:group-focus-visible:translate-x-1"
             >→</span>
           </NuxtLink>
         </li>

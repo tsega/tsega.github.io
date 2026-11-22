@@ -1,20 +1,15 @@
-# Contact links shown in the footer, in display order.
+# Contact links shown in the footer, in display order. `icon` names a
+# logo in app/utils/tech-logos.ts.
 links:
-  - title: Email
-    sub: tsegaselassi@gmail.com
-    href: mailto:tsegaselassi@gmail.com
   - title: LinkedIn
     sub: linkedin.com/in/tsegaselassie
     href: https://www.linkedin.com/in/tsegaselassie/
+    icon: linkedin
   - title: GitHub
     sub: github.com/tsega
     href: https://github.com/tsega
+    icon: github
   - title: Drupal.org
     sub: drupal.org/u/tsega
     href: https://www.drupal.org/u/tsega
-  - title: GitLab
-    sub: gitlab.com/tsega
-    href: https://gitlab.com/tsega
-  - title: X / Twitter
-    sub: '@tsegat'
-    href: https://x.com/tsegat
+    icon: drupal
