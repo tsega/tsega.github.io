@@ -76,7 +76,9 @@ const links = z.object({
   links: z.array(z.object({
     title: z.string(),
     sub: z.string(),
-    href: z.string()
+    href: z.string(),
+    // A key of `techLogos` in app/utils/tech-logos.ts.
+    icon: z.enum(['linkedin', 'github', 'drupal'])
   }))
 });
 
