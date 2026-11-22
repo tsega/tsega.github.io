@@ -17,9 +17,6 @@ hero:
       value: Addis Ababa · remote worldwide
     - label: Open to
       value: Enterprise architecture · Intelligent systems
-    - label: Contact
-      value: tsegaselassi@gmail.com
-      href: mailto:tsegaselassi@gmail.com
 
 stats:
   - value: 20+

@@ -1,8 +1,5 @@
 # Contact links shown in the footer, in display order.
 links:
-  - title: Email
-    sub: tsegaselassi@gmail.com
-    href: mailto:tsegaselassi@gmail.com
   - title: LinkedIn
     sub: linkedin.com/in/tsegaselassie
     href: https://www.linkedin.com/in/tsegaselassie/
@@ -12,9 +9,3 @@ links:
   - title: Drupal.org
     sub: drupal.org/u/tsega
     href: https://www.drupal.org/u/tsega
-  - title: GitLab
-    sub: gitlab.com/tsega
-    href: https://gitlab.com/tsega
-  - title: X / Twitter
-    sub: '@tsegat'
-    href: https://x.com/tsegat
