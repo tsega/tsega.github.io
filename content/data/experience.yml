@@ -1,17 +1,18 @@
-# Experience timeline, in the design's order. `date` is display text.
+# Experience timeline: current roles first, then the rest by end date,
+# newest first. `date` is display text.
 items:
-  - date: Feb 2025 →
+  - date: Feb 2025 → Present
     role: Senior Software Engineer
     org: Big Blue Door — London, UK (Remote)
     desc: Custom Drupal modules with PHP and Symfony components, complex data migrations, and accessible Twig/SCSS/JS front ends. Owns web service integrations (REST/JSON, Apache Solr) and CI/CD-driven maintenance.
-  - date: Aug 2021 → Jan 2025
-    role: Senior Technical Consultant — Drupal, Integration & GIS
-    org: Symphony3 — Melbourne, Australia (Remote)
-    desc: Architected systems integrations and rebuilt the company's flagship product as a cloud-native, Kubernetes-deployed application. Delivered 20+ client projects and mentored the wider engineering team on DevOps practice.
   - date: Dec 2019 → Present
     role: Web Systems Consultant
     org: CIMMYT (Int'l Maize & Wheat Improvement Center) — Texcoco, Mexico (Remote)
     desc: Leads a distributed team building the center's Learning Management System, and built a crop-production decision-support tool on GeoNode, an open-source geospatial CMS. Ongoing alongside other roles.
+  - date: Aug 2021 → Jan 2025
+    role: Senior Technical Consultant — Drupal, Integration & GIS
+    org: Symphony3 — Melbourne, Australia (Remote)
+    desc: Architected systems integrations and rebuilt the company's flagship product as a cloud-native, Kubernetes-deployed application. Delivered 20+ client projects and mentored the wider engineering team on DevOps practice.
   - date: Jan 2018 → Jul 2021
     role: Frontend Developer
     org: Axelerant — Atlanta, USA (Remote)
@@ -25,6 +26,6 @@ items:
     org: International Livestock Research Institute — Addis Ababa, Ethiopia
     desc: Managed Linux infrastructure and led Drupal/WordPress platforms for the institute's Communication & Knowledge Management department, including the CGSpace document repository.
   - date: May 2008 → Nov 2015
-    role: Chief Technology Officer
+    role: Software Developer → CTO
     org: Cybersoft p.l.c — Addis Ababa, Ethiopia
-    desc: Grew from Software Engineer to Team Lead to CTO over seven years — steering technical direction, product portfolio, and client relationships while guiding delivery across the full SDLC.
+    desc: Grew from Software Developer to Senior Software Engineer, Solution Line Manager and CTO over seven years — steering technical direction, product portfolio, and client relationships while guiding delivery across the full SDLC.

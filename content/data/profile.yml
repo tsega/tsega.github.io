@@ -22,7 +22,7 @@ stats:
   - value: 20+
     label: Years in software
   - value: 7 yrs
-    label: As CTO, Cybersoft
+    label: At Cybersoft, developer to CTO
   - value: '5'
     label: Global enterprise brands
   - value: 200+
@@ -32,16 +32,18 @@ about:
   intro: I design systems, then lead the teams that build them. For two decades that has meant shaping platforms, integrations and infrastructure for organizations across Africa, Europe, Australia and the Americas, choosing the tools to fit the problem.
   facts:
     - label: Led
-      value: 'Cybersoft, Addis Ababa: engineer to CTO over seven years'
+      value: 'Cybersoft, Addis Ababa: developer to CTO over seven years'
     - label: Consulted
       value: Symphony3 (Melbourne), CIMMYT, University of the Arts London
     - label: Shipped for
-      value: L'Oréal, Bayer, UK Hydrographic Office, Melco Resorts
+      value: L'Oréal, Bayer, UK Hydrographic Office, Melco Resorts, Wunderman Thompson
+    - label: Research
+      value: 'CGIAR centres: CIMMYT (Mexico) and ILRI (Addis Ababa)'
     - label: Exploring
       value: Intelligent systems, enterprise platforms, graph databases
   highlights:
     - value: 7 years
-      title: Chief Technology Officer
+      title: Developer to CTO
       detail: Cybersoft p.l.c, 2008–2015
     - value: 1M+
       title: Survey records analyzed
